@@ -2,52 +2,122 @@
 <html>
 <head>
     <title>Fábio | Web Developer</title>
-    <style>
-        /* --- SEU CSS ORIGINAL --- */
-        body { margin: 0; font-family: Arial, sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
-        .hero { text-align: center; padding: 80px 20px; }
-        .btn { margin-top: 20px; padding: 12px 25px; background: white; color: #333; border-radius: 8px; text-decoration: none; display: inline-block; transition: 0.3s; }
-        .btn:hover { background: #eee; transform: translateY(-2px); }
-        .section { background: white; color: #333; padding: 50px 20px; text-align: center; }
-        .projects { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .card { background: #f1f2f6; padding: 20px; border-radius: 10px; width: 250px; }
 
-        /* --- NOVO CSS PARA O MODAL (INFO) --- */
-        #infoBtn { 
-            position: fixed; bottom: 20px; right: 20px; cursor: pointer; 
-            border-radius: 50%; width: 50px; height: 50px; border: none; 
-            background: #764ba2; color: white; font-size: 20px; font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000;
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
         }
-        .modal { 
-            display: none; position: fixed; z-index: 2000; left: 0; top: 0; 
-            width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); 
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
         }
-        .modal-content { 
-            background-color: white; margin: 10% auto; padding: 30px; 
-            border-radius: 15px; width: 80%; max-width: 500px; color: #333; 
-            text-align: left; position: relative; line-height: 1.6;
+
+        .btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: white;
+            color: #333;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
         }
-        .close { float: right; cursor: pointer; font-size: 28px; font-weight: bold; color: #aaa; }
-        .close:hover { color: black; }
+
+        .btn:hover {
+            background: #eee;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background: white;
+            color: #333;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .projects {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #f1f2f6;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+        }
+
+        .btn-project {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #764ba2;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-project:hover {
+            background: #667eea;
+        }
+
+        /* BOTÃO INFO */
+        #infoBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            border: none;
+            background: #764ba2;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+        }
+
+        .modal-content {
+            background: white;
+            color: #333;
+            margin: 10% auto;
+            padding: 20px;
+            width: 300px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .close {
+            float: right;
+            cursor: pointer;
+            font-size: 20px;
+        }
     </style>
 </head>
-<body>
-.btn-project {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    background: #764ba2;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-     font-size: 14px;
-    transition: 0.3s;
-}
 
-.btn-project:hover {
-    background: #667eea;
-}
+<body>
+
     <div class="hero">
         <h1>Fábio 👨‍💻</h1>
         <p>Aspiring Web Developer</p>
@@ -57,79 +127,61 @@
     <div class="section">
         <h2>About Me</h2>
         <p style="max-width: 800px; margin: 0 auto; text-align: justify;">
-            I am a Portuguese and English Language Teacher with a Bachelor's and Licentiate degree, 
-            as well as a Master's degree in Education. With over 27 years of experience working with people 
-            and team management, I have developed strong communication, leadership, and problem-solving skills... 
-            (seu texto continua aqui)
+            I am a Portuguese and English Language Teacher with over 27 years of experience. 
+            Currently transitioning into Web Development, focusing on HTML, CSS and JavaScript.
         </p>
     </div>
 
     <div class="section" id="projects">
         <h2>Projects</h2>
+
         <div class="projects">
+
             <div class="card">
                 <h3>To-Do List App</h3>
-                <div class="projects">
-    <!-- Card do To-Do List -->
-    <div class="card">
-        <h3>To-Do List App</h3>
-        <p>A functional task management application built with JavaScript.</p>
-        <a href="LINK_DO_SEU_PROJETO_AQUI" target="_blank" class="btn-project">Live Demo</a>
-        <a href="LINK_DO_GITHUB_AQUI" target="_blank" class="btn-project">View Code</a>
-    </div>
-
-    <!-- Card do Portfólio / Currículo -->
-    <div class="card">
-        <h3>Professional Profile</h3>
-        <p>Master in Education & Web Developer. View my full documentation.</p>
-        <!-- Aqui você pode linkar o seu PDF que está no GitHub ou Google Drive -->
-        <a href="LINK_DO_SEU_CURRICULO_PDF" target="_blank" class="btn-project">Open Resume (PDF)</a>
-    </div>
-</div>
-                
-                
-                <p>A simple and functional task management application built with JavaScript.</p>
+                <p>Task management app built with JavaScript.</p>
+                <a href="#" class="btn-project">Live Demo</a>
+                <a href="#" class="btn-project">View Code</a>
             </div>
+
+            <div class="card">
+                <h3>Professional Profile</h3>
+                <p>My resume and professional background.</p>
+                <a href="#" class="btn-project">Open Resume</a>
+            </div>
+
             <div class="card">
                 <h3>Portfolio Website</h3>
-                <p>My personal portfolio created with HTML and CSS.</p>
+                <p>My personal website built with HTML & CSS.</p>
             </div>
+
         </div>
     </div>
 
-    <!-- 1. BOTÃO "?" NO CANTO DA TELA -->
+    <!-- BOTÃO -->
     <button id="infoBtn">?</button>
 
-    <!-- 2. ESTRUTURA DO POP-UP (MODAL) -->
+    <!-- MODAL -->
     <div id="infoModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2 style="color: #764ba2;">Project Info & Tech Stack</h2>
+            <h2 style="color: #764ba2;">Project Info</h2>
             <hr>
-            <p><strong>Main Technologies:</strong> HTML5, CSS3 (Flexbox/Grid), JavaScript (Vanilla).</p>
-            <p><strong>Goal:</strong> This portfolio showcases my transition from Education to Software Development.</p>
-            <p><strong>Future Goals:</strong> Looking for opportunities in <strong>Malta</strong> and <strong>Spain</strong>.</p>
+            <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+            <p><strong>Goal:</strong> Transition to tech career</p>
+            <p><strong>Target:</strong> Malta & Spain</p>
         </div>
     </div>
 
-    <!-- 3. LÓGICA JAVASCRIPT -->
     <script>
         const modal = document.getElementById("infoModal");
         const btn = document.getElementById("infoBtn");
-        const span = document.getElementsByClassName("close")[0];
+        const span = document.querySelector(".close");
 
-        // Abrir ao clicar no botão
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
+        btn.onclick = () => modal.style.display = "block";
+        span.onclick = () => modal.style.display = "none";
 
-        // Fechar ao clicar no X
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // Fechar se clicar fora da caixa branca
-        window.onclick = function(event) {
+        window.onclick = (event) => {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
