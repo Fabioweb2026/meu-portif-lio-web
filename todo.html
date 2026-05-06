@@ -3,38 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Master - Fábio Dev</title>
+    <title>Fábio | Web Developer</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f9; text-align: center; padding: 50px; }
-        .todo-container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 400px; margin: auto; }
-        input { padding: 10px; width: 70%; border: 1px solid #ddd; border-radius: 5px; }
-        button { padding: 10px; background: #764ba2; color: white; border: none; border-radius: 5px; cursor: pointer; }
-        ul { list-style: none; padding: 0; margin-top: 20px; }
-        li { background: #eee; margin: 5px 0; padding: 10px; display: flex; justify-content: space-between; align-items: center; border-radius: 3px; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #764ba2; color: white; text-align: center; }
+        .container { padding: 50px 20px; }
+        .card-area { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+        .card { background: white; color: #333; padding: 25px; border-radius: 12px; width: 260px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .btn { display: inline-block; background: #667eea; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 15px; font-weight: bold; }
+        img { width: 60px; height: 60px; margin-bottom: 15px; object-fit: contain; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .about-text { max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Fábio 👨‍💻</h1>
+        <p class="about-text">IT Student & Aspiring Web Developer | Transitioning from Education Management to Technology.</p>
+        
+        <div class="card-area">
+            <!-- CARD 1: CURRÍCULO -->
+            <div class="card">
+                <img src="https://flaticon.com" alt="Resume">
+                <h3>Resume</h3>
+                <p>Professional background in English.</p>
+                <a href="resume.pdf" target="_blank" class="btn">Open PDF</a>
+            </div>
+            
+            <!-- CARD 2: O PROJETO QUE VOCÊ ABRIU -->
+            <div class="card">
+                <img src="https://flaticon.com" alt="Task Master">
+                <h3>Task Master</h3>
+                <p>Interactive To-Do List with JavaScript.</p>
+                <a href="todo.html" class="btn">Live Demo</a>
+            </div>
 
-    <div class="todo-container">
-        <h2>✅ Task Master</h2>
-        <input type="text" id="taskInput" placeholder="Add a new task...">
-        <button onclick="addTask()">Add</button>
-        <ul id="taskList"></ul>
+            <!-- CARD 3: GITHUB -->
+            <div class="card">
+                <img src="https://flaticon.com" alt="GitHub">
+                <h3>My GitHub</h3>
+                <p>Check my code and repositories.</p>
+                <a href="https://github.com" target="_blank" class="btn">View Profile</a>
+            </div>
+        </div>
     </div>
-
-    <script>
-        function addTask() {
-            const input = document.getElementById('taskInput');
-            const taskText = input.value;
-            if (taskText === '') return;
-
-            const li = document.createElement('li');
-            li.innerHTML = `${taskText} <button onclick="this.parentElement.remove()" style="background:red; padding:5px;">X</button>`;
-            document.getElementById('taskList').appendChild(li);
-            input.value = '';
-        }
-    </script>
-
 </body>
 </html>
 
