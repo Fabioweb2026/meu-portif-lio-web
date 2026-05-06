@@ -6,7 +6,7 @@
     <title>Finance Tracker - Fábio Dev</title>
     <style>
         body { 
-            font-family: 'Segoe UI', sans-serif; 
+            font-family: 'Segoe UI', Arial, sans-serif; 
             background: linear-gradient(135deg, #1e3c72, #2a5298); 
             min-height: 100vh; 
             display: flex; 
@@ -35,7 +35,6 @@
             font-size: 2.2rem; 
             font-weight: bold; 
             color: #27ae60; 
-            margin-top: 5px;
         }
         .input-group { 
             margin-bottom: 15px; 
@@ -46,7 +45,6 @@
             font-size: 0.85rem; 
             margin-bottom: 5px; 
             font-weight: bold; 
-            color: #555;
         }
         input { 
             width: 100%; 
@@ -54,11 +52,7 @@
             border: 2px solid #eee; 
             border-radius: 8px; 
             box-sizing: border-box; 
-            font-size: 1rem;
-            outline: none;
         }
-        input:focus { border-color: #1e3c72; }
-        
         button { 
             width: 100%; 
             padding: 14px; 
@@ -69,57 +63,45 @@
             cursor: pointer; 
             font-weight: bold; 
             margin-top: 10px; 
-            transition: 0.3s;
-            font-size: 1rem;
         }
-        button:hover { background: #2a5298; transform: translateY(-2px); }
-        
-        /* Cores Dinâmicas */
         .positive { color: #27ae60 !important; }
         .negative { color: #e74c3c !important; }
-        
-        .back-link { display: block; margin-top: 20px; color: #1e3c72; text-decoration: none; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2 style="margin-top:0;">💰 Finance Tracker</h2>
+        <h2>💰 Finance Tracker</h2>
         
         <div class="balance-box">
-            <p style="margin:0; color: #666; font-size: 0.9rem;">Your Net Balance</p>
+            <p style="margin:0; color: #666;">Total Balance</p>
             <div id="balance">$ 0.00</div>
         </div>
 
         <div class="input-group">
-            <label>Total Income (Earnings)</label>
-            <input type="number" id="incomeInput" placeholder="Ex: 5000">
+            <label>Income</label>
+            <input type="number" id="incomeInput" placeholder="0.00">
         </div>
 
         <div class="input-group">
-            <label>Total Expenses (Spending)</label>
-            <input type="number" id="expenseInput" placeholder="Ex: 2500">
+            <label>Expenses</label>
+            <input type="number" id="expenseInput" placeholder="0.00">
         </div>
 
         <button onclick="calculateFinance()">Calculate Now</button>
-        
-        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        <br>
+        <a href="index.html" style="display:block; margin-top:20px; font-size:12px; color:#1e3c72; text-decoration:none;">← Back to Portfolio</a>
     </div>
 
     <script>
         function calculateFinance() {
-            // Pega os valores e garante que sejam números
             const income = parseFloat(document.getElementById('incomeInput').value) || 0;
             const expense = parseFloat(document.getElementById('expenseInput').value) || 0;
-            
-            // Faz a conta
             const total = income - expense;
 
-            // Exibe o resultado com 2 casas decimais
             const balanceDisplay = document.getElementById('balance');
             balanceDisplay.innerText = `$ ${total.toFixed(2)}`;
 
-            // Muda a cor baseado no resultado (Lógica Condicional)
             if (total >= 0) {
                 balanceDisplay.className = 'positive';
             } else {
