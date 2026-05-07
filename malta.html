@@ -6,61 +6,40 @@
     <title>Malta Journey | Fábio</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f7f6; color: #333; text-align: center; }
-        header { 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('malta1.jpeg') no-repeat center/cover;
-            height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white;
-        }
+        header { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('malta1.jpeg') no-repeat center/cover; height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; }
+        
         .highlight-section { background: white; padding: 40px 20px; margin-top: -30px; border-radius: 30px 30px 0 0; box-shadow: 0 -10px 20px rgba(0,0,0,0.1); }
         
-        .giorgios-container { 
-            background: #fffaf0; border: 1px solid #ffcc80; border-radius: 20px; padding: 25px; 
-            max-width: 700px; margin: 20px auto; display: flex; flex-wrap: wrap; gap: 20px; 
-            text-align: left; align-items: center; justify-content: center;
-        }
-        .giorgios-main-img { 
-            width: 180px; border-radius: 15px; border: 4px solid #f57c00; 
+        .giorgios-container { background: #fffaf0; border: 1px solid #ffcc80; border-radius: 20px; padding: 25px; max-width: 700px; margin: 20px auto; display: flex; flex-wrap: wrap; gap: 20px; text-align: left; align-items: center; justify-content: center; }
+        .giorgios-main-img { width: 180px; border-radius: 15px; border: 4px solid #f57c00; box-shadow: 0 4px 10px rgba(0,0,0,0.1); cursor: pointer; transition: 0.3s; }
+        .giorgios-main-img:hover { transform: scale(1.05); }
+
+        .btn-maps { background: #f57c00; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px; }
+
+        /* Galeria corrigida */
+        .gallery { max-width: 1000px; margin: 40px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 20px; }
+        
+        .gallery-card { 
+            background: white; 
+            border-radius: 15px; 
+            overflow: hidden; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            transition: all 0.4s ease-in-out; 
+            cursor: pointer;
         }
-        .btn-maps { 
-            background: #f57c00; color: white; padding: 12px 20px; border-radius: 8px; 
-            text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px;
+
+        .gallery-card:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2); 
         }
-        .gallery { 
-            max-width: 1000px; margin: 40px auto; display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-            gap: 20px; padding: 20px; 
-        }
-        .gallery-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        /* Procure por esta parte no seu arquivo malta.html */
-.gallery-card { 
-   /* Este bloco controla o card parado */
-.gallery-card { 
-    background: white; 
-    border-radius: 15px; 
-    overflow: hidden; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    /* O SEGREDO: Esta linha avisa que QUALQUER mudança deve ser suave */
-    transition: all 0.5s ease-in-out !important; 
-}
-
-/* Este bloco controla o movimento do mouse */
-.gallery-card:hover { 
-    transform: scale(1.1) !important; /* Aumenta 10% para ficar bem visível */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3) !important;
-    z-index: 10; /* Faz ele ficar "por cima" dos outros ao crescer */
-}
-
-
-/* ADICIONE O CÓDIGO EXATAMENTE AQUI EMBAIXO */
-.gallery-card:hover { 
-    transform: scale(1.03); 
-    transition: 0.3s; 
-    cursor: pointer;
-}
 
         .gallery-card img { width: 100%; height: 180px; object-fit: cover; }
         .gallery-content { padding: 12px; text-align: left; }
-        
+
+        /* Estilo para a foto ampliada (Modal) */
+        #modal { display: none; position: fixed; z-index: 100; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; cursor: pointer; }
+        #modal img { max-width: 90%; max-height: 90%; border: 5px solid white; border-radius: 10px; }
+
         .btn-back { display: inline-block; margin: 30px 0 50px; padding: 12px 25px; background: #764ba2; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
     </style>
 </head>
@@ -70,63 +49,58 @@
     <h1>My Malta Experience 🇲🇹</h1>
 </header>
 
+<!-- Área para ampliar a foto -->
+<div id="modal" onclick="this.style.display='none'">
+    <img id="img-ampliada" src="" alt="Ampliada">
+</div>
+
 <section class="highlight-section">
     <h2>Special Highlight: Giorgio's Cafeteria ☕</h2>
-    
     <div class="giorgios-container">
-        <!-- Foto Principal com Borda -->
-        <img src="malta12.jpeg" alt="Giorgio's Cafe" class="giorgios-main-img">
-        
+        <img src="malta12.jpeg" alt="Giorgio's Cafe" class="giorgios-main-img" onclick="ampliar(this.src)">
         <div style="flex: 1; min-width: 250px;">
             <p><strong>📍 Localização:</strong> 116-117 Strand, Sliema, Malta</p>
             <p>A classic boutique café established in 1987. My favorite place to enjoy the Sliema seafront atmosphere.</p>
-            
-            <a href="https://google.com" target="_blank" class="btn-maps">
-                📍 Ver no Google Maps
-            </a>
+            <a href="https://google.com" target="_blank" class="btn-maps">📍 Ver no Google Maps</a>
         </div>
     </div>
 </section>
 
-<!-- Galeria de Fotos -->
 <div class="gallery">
-    <div class="gallery-card">
+    <div class="gallery-card" onclick="ampliar('malta5.jpeg')">
         <img src="malta5.jpeg" alt="Malta 5">
-        <div class="gallery-content">
-            <h3 style="margin: 0; font-size: 1rem;">Mediterranean Sky</h3>
-            <p style="font-size: 0.85rem; color: #666;">Beautiful sunset from my stay.</p>
-        </div>
+        <div class="gallery-content"><h3>Mediterranean Sky</h3><p>Beautiful sunset from my stay.</p></div>
     </div>
 
-    <div class="gallery-card">
+    <div class="gallery-card" onclick="ampliar('mala3.jpeg')">
         <img src="mala3.jpeg" alt="Malta 3">
-        <div class="gallery-content">
-            <h3 style="margin: 0; font-size: 1rem;">Local Vibe</h3>
-            <p style="font-size: 0.85rem; color: #666;">Exploring the unique streets of Malta.</p>
-        </div>
+        <div class="gallery-content"><h3>Local Vibe</h3><p>Exploring the unique streets of Malta.</p></div>
     </div>
 
-    <div class="gallery-card">
+    <div class="gallery-card" onclick="ampliar('malta12.jpeg')">
         <img src="malta12.jpeg" alt="Malta 12">
-        <div class="gallery-content">
-            <h3 style="margin: 0; font-size: 1rem;">Giorgio's Details</h3>
-            <p style="font-size: 0.85rem; color: #666;">Sophistication in every corner.</p>
-        </div>
+        <div class="gallery-content"><h3>Giorgio's Details</h3><p>Sophistication in every corner.</p></div>
     </div>
 
-    <div class="gallery-card">
+    <div class="gallery-card" onclick="ampliar('malta11.jpeg')">
         <img src="malta11.jpeg" alt="Malta 11">
-        <div class="gallery-content">
-            <h3 style="margin: 0; font-size: 1rem;">Island Architecture</h3>
-            <p style="font-size: 0.85rem; color: #666;">Ancient stones and history.</p>
-        </div>
+        <div class="gallery-content"><h3>Island Architecture</h3><p>Ancient stones and history.</p></div>
     </div>
 </div>
 
 <a href="index.html" class="btn-back">← Voltar ao Portfólio</a>
 
+<script>
+    // Função para ampliar a foto
+    function ampliar(src) {
+        document.getElementById('img-ampliada').src = src;
+        document.getElementById('modal').style.display = 'flex';
+    }
+</script>
+
 </body>
 </html>
+
 
 
 
