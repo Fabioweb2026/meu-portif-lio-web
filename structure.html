@@ -9,19 +9,15 @@
         header { margin: 20px 0; text-align: center; }
         h1 { color: #f1c40f; margin-bottom: 5px; }
         .dashboard { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; padding: 20px; }
-        
-        /* Card Estilo Painel */
         .panel-card { background: white; color: #333; border-radius: 20px; width: 350px; min-height: 450px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; flex-direction: column; }
         h2 { border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0; }
-
-        /* Lista de Funcionários Estilizada */
         .org-list { flex-grow: 1; overflow-y: auto; text-align: left; }
         details { background: #f9f9f9; margin-bottom: 10px; padding: 10px; border-radius: 10px; border-left: 5px solid #6c5ce7; }
         summary { font-weight: bold; cursor: pointer; color: #444; }
         ul { margin: 10px 0 0; padding-left: 20px; font-size: 0.9rem; color: #666; }
         li { margin-bottom: 5px; }
-
-        .btn-back { margin-top: 20px; color: white; text-decoration: none; font-weight: bold; background: #6c5ce7; padding: 10px 20px; border-radius: 8px; }
+        .btn-back { margin-top: 20px; color: white; text-decoration: none; font-weight: bold; background: #6c5ce7; padding: 10px 20px; border-radius: 8px; margin-bottom: 20px; }
+        input { margin-bottom: 10px; padding: 10px; border-radius: 8px; border: 1px solid #ddd; }
     </style>
 </head>
 <body>
@@ -32,7 +28,7 @@
     </header>
 
     <div class="dashboard">
-        <!-- CARD 1: SUBSTITUINDO DAILY GOALS POR ESTRUTURA -->
+        <!-- CARD 1: ESTRUTURA -->
         <div class="panel-card">
             <h2>Estrutura e Funções 🏢</h2>
             <div class="org-list">
@@ -43,7 +39,6 @@
                         <li><strong>Compliance:</strong> Conciliação bancária e fiscal.</li>
                     </ul>
                 </details>
-
                 <details>
                     <summary>Maria Souza - Operações</summary>
                     <ul>
@@ -51,7 +46,6 @@
                         <li><strong>Estoque:</strong> Gestão de inventário e fornecedores.</li>
                     </ul>
                 </details>
-
                 <details>
                     <summary>Ricardo Santos - RH</summary>
                     <ul>
@@ -62,30 +56,55 @@
             </div>
         </div>
 
-        <!-- CARD 2: TECH QUIZ (Como na sua imagem) -->
+        <!-- CARD 2: TECH QUIZ -->
         <div class="panel-card">
             <h2>Tech Quiz 🧠</h2>
-            <p>Score: 0</p>
+            <p id="scoreText">Score: 0</p>
             <p><strong>Is HTML a programming language?</strong></p>
-            <button style="background: #2ecc71; color: white; border: none; padding: 15px; border-radius: 10px; margin-bottom: 10px; cursor: pointer;">YES</button>
-            <button style="background: #e74c3c; color: white; border: none; padding: 15px; border-radius: 10px; cursor: pointer;">NO</button>
+            <button id="btnYes" style="background: #2ecc71; color: white; border: none; padding: 15px; border-radius: 10px; margin-bottom: 10px; cursor: pointer;">YES</button>
+            <button id="btnNo" style="background: #e74c3c; color: white; border: none; padding: 15px; border-radius: 10px; cursor: pointer;">NO</button>
         </div>
 
-        <!-- CARD 3: BUDGET TOOL (Como na sua imagem) -->
+        <!-- CARD 3: BUDGET TOOL -->
         <div class="panel-card">
             <h2>Budget Tool 💡</h2>
-            <input type="text" placeholder="Value 1" style="margin-bottom: 10px; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
-            <input type="text" placeholder="Value 2" style="margin-bottom: 10px; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
+            <input type="number" id="v1" placeholder="Value 1">
+            <input type="number" id="v2" placeholder="Value 2">
             <div style="display: flex; gap: 10px;">
-                <button style="flex: 1; background: #6c5ce7; color: white; border: none; padding: 10px; border-radius: 8px;">+</button>
-                <button style="flex: 1; background: #6c5ce7; color: white; border: none; padding: 10px; border-radius: 8px;">x</button>
+                <button onclick="calcular('+')" style="flex: 1; background: #6c5ce7; color: white; border: none; padding: 10px; border-radius: 8px; cursor: pointer;">+</button>
+                <button onclick="calcular('*')" style="flex: 1; background: #6c5ce7; color: white; border: none; padding: 10px; border-radius: 8px; cursor: pointer;">x</button>
             </div>
-            <h1 style="color: #6c5ce7; margin-top: 20px;">0</h1>
+            <h1 id="res" style="color: #6c5ce7; margin-top: 20px;">0</h1>
         </div>
     </div>
 
     <a href="index.html" class="btn-back">Voltar ao Portfólio</a>
 
+    <script>
+        // Lógica do Quiz
+        let score = 0;
+        document.getElementById('btnNo').onclick = function() {
+            alert("Correct! HTML is a Markup Language.");
+            score += 10;
+            document.getElementById('scoreText').innerText = "Score: " + score;
+        };
+        document.getElementById('btnYes').onclick = function() {
+            alert("Wrong! HTML is not for logic, it's for structure.");
+        };
+
+        // Lógica da Calculadora
+        function calcular(op) {
+            const n1 = parseFloat(document.getElementById('v1').value);
+            const n2 = parseFloat(document.getElementById('v2').value);
+            let r = 0;
+            if (isNaN(n1) || isNaN(n2)) { alert("Enter numbers!"); return; }
+            
+            if (op === '+') r = n1 + n2;
+            if (op === '*') r = n1 * n2;
+            
+            document.getElementById('res').innerText = r;
+        }
+    </script>
 </body>
 </html>
 
