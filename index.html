@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fábio | Portfolio</title>
     <style>
-        /* RESET BÁSICO */
+        /* RESET E FONTES */
         *{ margin:0; padding:0; box-sizing:border-box; }
         
         body{
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f2f5;
-            color:#333;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color:#1e293b;
             min-height:100vh;
+            line-height: 1.5;
         }
 
-        /* CAPA DO PORTFÓLIO (BANNER) */
+        /* CAPA DO PORTFÓLIO PROFISSIONAL */
         .hero-header {
             width: 100%;
-            height: 380px;
-            /* AQUI ESTÁ A SUA FOTO COMO CAPA */
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                        url('foto.fabio1.jpg') no-repeat center center;
+            height: 420px;
+            /* Ajuste de enquadramento em 25% para focar no rosto */
+            background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.8)), 
+                        url('foto.fabio1.jpg') no-repeat center 25%;
             background-size: cover;
             display: flex;
             flex-direction: column;
@@ -35,147 +36,174 @@
         /* CONTAINER DOS CARDS */
         .container{
             width:100%;
-            max-width:1100px;
-            margin: -50px auto 50px; /* Faz os cards subirem sobre a foto */
+            max-width:1200px;
+            margin: -70px auto 60px;
             padding: 0 20px;
         }
 
-        /* FOTO DE PERFIL CIRCULAR */
+        /* AVATAR COM BRILHO */
         .profile-avatar{
-            width:140px;
-            height:140px;
+            width:150px;
+            height:150px;
             border-radius:50%;
             object-fit:cover;
-            border:4px solid white;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            margin-bottom: 15px;
-            background-color: #764ba2;
+            border:4px solid #ffffff;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
         }
+        .profile-avatar:hover { transform: scale(1.05); }
 
         h1{
-            font-size: 3rem;
-            margin-bottom: 5px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.025em;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
 
         .subtitle{
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-weight: 300;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            font-size: 1.25rem;
+            color: #e2e8f0;
+            font-weight: 400;
+            max-width: 600px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        /* ÁREA DOS LINKS/CARDS */
+        /* GRID DE CARDS */
         .card-area{
-            display:flex;
-            justify-content:center;
-            gap:20px;
-            flex-wrap:wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            justify-content: center;
         }
 
         .card{
-            background:white;
-            color:#333;
-            width:210px;
-            padding:25px;
-            border-radius:18px;
-            text-decoration:none;
-            display:flex;
-            flex-direction:column;
-            align-items:center;
-            box-shadow:0 10px 25px rgba(0,0,0,0.1);
-            transition: 0.3s ease;
+            background: #ffffff;
+            padding: 32px 24px;
+            border-radius: 24px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .card:hover{
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #6366f1;
         }
 
         .icon-box{
-            width:55px; height:55px; border-radius:50%;
-            display:flex; align-items:center; justify-content:center;
-            margin-bottom:15px; font-size:24px;
+            width: 64px; height: 64px;
+            border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px; font-size: 28px;
+            transition: transform 0.3s ease;
         }
+        .card:hover .icon-box { transform: rotate(10deg) scale(1.1); }
 
-        /* CORES DOS ÍCONES */
-        .bg-blue{ background:#e3f2fd; color:#1976d2; }
-        .bg-red{ background:#ffebee; color:#c62828; }
-        .bg-green{ background:#e8f5e9; color:#2e7d32; }
-        .bg-orange{ background:#fff3e0; color:#f57c00; }
-        .bg-purple{ background:#f3e5f5; color:#7b1fa2; }
+        /* PALETA PROFISSIONAL */
+        .bg-blue{ background:#eff6ff; color:#2563eb; }
+        .bg-red{ background:#fef2f2; color:#dc2626; }
+        .bg-green{ background:#f0fdf4; color:#16a34a; }
+        .bg-orange{ background:#fff7ed; color:#ea580c; }
+        .bg-purple{ background:#faf5ff; color:#9333ea; }
 
-        .card h3{ margin-bottom:10px; font-size: 1.2rem; }
-        .card p{ font-size:14px; color: #666; text-align: center; margin-bottom: 15px; line-height: 1.4; }
+        .card h3{ 
+            color: #0f172a;
+            margin-bottom: 12px; 
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        
+        .card p{ 
+            font-size: 0.95rem; 
+            color: #64748b; 
+            text-align: center; 
+            margin-bottom: 24px; 
+            flex-grow: 1;
+        }
 
         .btn{
-            background:#764ba2;
-            color:white;
-            padding:8px 16px;
-            border-radius:8px;
-            font-weight:bold;
-            font-size:12px;
+            width: 100%;
+            background: #6366f1;
+            color: white;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: background 0.3s ease;
         }
+        .card:hover .btn { background: #4f46e5; }
 
-        /* RESPONSIVIDADE PARA CELULAR */
+        /* CELULAR */
         @media(max-width:768px){
-            h1{ font-size: 2.2rem; }
-            .hero-header { height: 320px; }
-            .card { width: 100%; max-width: 300px; }
+            h1{ font-size: 2.5rem; }
+            .hero-header { height: 360px; }
+            .container { margin-top: -60px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- CABEÇALHO COM A FOTO DE CAPA -->
     <header class="hero-header">
         <img src="foto.fabio1.jpg" alt="Foto de Perfil Fábio" class="profile-avatar">
         <h1>Fábio &#128104;&#8205;&#128187;</h1>
         <p class="subtitle">IT Student & Aspiring Web Developer</p>
     </header>
 
-    <!-- ÁREA DOS CARDS -->
     <div class="container">
         <div class="card-area">
+            <!-- Link Resume -->
             <a href="resume.pdf" target="_blank" class="card">
                 <div class="icon-box bg-blue">📄</div>
                 <h3>Resume</h3>
-                <p>Background in English teaching and education.</p>
-                <span class="btn">Open PDF</span>
+                <p>Academic background and professional experience.</p>
+                <div class="btn">View PDF</div>
             </a>
 
+            <!-- Link Org Tool -->
             <a href="structure.html" class="card">
                 <div class="icon-box bg-red">🏢</div>
                 <h3>Org Tool</h3>
-                <p>Organizational sectors explorer tool.</p>
-                <span class="btn">View Tool</span>
+                <p>Explore organizational sectors and structures.</p>
+                <div class="btn">Launch Tool</div>
             </a>
 
+            <!-- Link Finance -->
             <a href="finance.html" class="card">
                 <div class="icon-box bg-green">💰</div>
                 <h3>Finance</h3>
-                <p>Financial balance and calculator project.</p>
-                <span class="btn">Live Demo</span>
+                <p>Financial balance and management project.</p>
+                <div class="btn">Open App</div>
             </a>
 
+            <!-- Link Malta -->
             <a href="malta.html" class="card">
                 <div class="icon-box bg-orange">🇲🇹</div>
                 <h3>Malta Guide</h3>
-                <p>Tourism experiences and travel tips.</p>
-                <span class="btn">View Guide</span>
+                <p>Full travel guide and tourism experiences.</p>
+                <div class="btn">Explore Guide</div>
             </a>
 
+            <!-- Link Converter -->
             <a href="converter.html" class="card">
                 <div class="icon-box bg-purple">💱</div>
                 <h3>Converter</h3>
-                <p>EUR to BRL conversion tool.</p>
-                <span class="btn">Live Demo</span>
+                <p>Quick currency conversion (EUR to BRL).</p>
+                <div class="btn">Use Converter</div>
             </a>
         </div>
     </div>
 
 </body>
 </html>
+
 
          
       
