@@ -33,11 +33,23 @@
         .gallery-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         /* Procure por esta parte no seu arquivo malta.html */
 .gallery-card { 
+   /* Este bloco controla o card parado */
+.gallery-card { 
     background: white; 
     border-radius: 15px; 
     overflow: hidden; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    /* O SEGREDO: Esta linha avisa que QUALQUER mudança deve ser suave */
+    transition: all 0.5s ease-in-out !important; 
 }
+
+/* Este bloco controla o movimento do mouse */
+.gallery-card:hover { 
+    transform: scale(1.1) !important; /* Aumenta 10% para ficar bem visível */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3) !important;
+    z-index: 10; /* Faz ele ficar "por cima" dos outros ao crescer */
+}
+
 
 /* ADICIONE O CÓDIGO EXATAMENTE AQUI EMBAIXO */
 .gallery-card:hover { 
