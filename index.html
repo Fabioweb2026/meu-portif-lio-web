@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fábio | Web Developer Portfolio</title>
-    <!-- Favicon da Bandeira de Malta -->
-    <link rel="icon" href="https://cloudflare.com">
     
+    <!-- Favicon da Bandeira de Malta corrigido -->
+    <link rel="icon" href="https://cloudflare.com">
+
     <style>
         body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-align: center; min-height: 100vh; }
+        
         .container { padding: 40px 20px; }
+
+        /* Estilo da sua Foto de Perfil */
+        .profile-img { 
+            width: 140px; 
+            height: 140px; 
+            border-radius: 50%; 
+            border: 5px solid rgba(255, 255, 255, 0.2); 
+            margin-bottom: 15px; 
+            object-fit: cover; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
+            transition: 0.3s; 
+        } 
+        .profile-img:hover { transform: scale(1.05); border-color: white; }
+
         .card-area { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; max-width: 1100px; margin: 30px auto; }
         
         .card { 
@@ -17,17 +33,10 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: all 0.3s ease; 
             display: flex; flex-direction: column; align-items: center; 
         }
-
-        /* Efeito de subida nos cards que sugerimos */
-        .card:hover { 
-            transform: translateY(-10px); 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            cursor: pointer;
-        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.4); cursor: pointer; }
 
         .icon-box { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; font-size: 25px; }
         
-        /* Cores dos Ícones */
         .bg-blue { background: #e3f2fd; color: #1976d2; }
         .bg-green { background: #e8f5e9; color: #2e7d32; }
         .bg-purple { background: #f3e5f5; color: #7b1fa2; }
@@ -42,9 +51,13 @@
 <body>
 
 <div class="container">
-    <!-- Título com emoji corrigido -->
+    <!-- Sua Foto (Lembre de manter o nome IT student.jpg no GitHub) -->
+    <img src="IT student.jpg" alt="Fábio" class="profile-img">
+
+    <!-- Título Corrigido -->
     <h1>Fábio 👨‍💻</h1>
-<p class="subtitle">IT Student & Aspiring Web Developer</p>
+    <p class="subtitle">IT Student & Aspiring Web Developer</p>
+
     <div class="card-area">
         <div class="card">
             <div class="icon-box bg-blue">📄</div>
@@ -85,6 +98,7 @@
 
 </body>
 </html>
+
 
 
 
