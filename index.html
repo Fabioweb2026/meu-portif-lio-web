@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,164 +11,155 @@
 
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background: #fdfaf6; /* Creme Sollene */
-            color: #1f2937; /* Grafite Sollene */
+            background: #020617; /* Fundo do site quase preto */
+            color: #ffffff; 
             line-height: 1.6;
         }
 
-        /* HEADER PREMIUM */
+        /* FOTO INTEIRA NA PARTE SUPERIOR */
         .hero {
-            padding: 80px 20px 60px;
+            width: 100%;
+            height: 600px; /* Altura da foto no topo */
+            background: linear-gradient(rgba(0, 0, 0, 0.2), #020617), 
+                        url('foto.fabio1.jpg') no-repeat center 20%;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
             text-align: center;
-            background: #ffffff;
-            border-bottom: 2px solid #b39359;
-            margin-bottom: 60px;
+            padding-bottom: 50px;
         }
 
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #b39359;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 25px rgba(179, 147, 89, 0.2);
+        .hero h1 { 
+            font-size: 72px; 
+            font-weight: 800; 
+            letter-spacing: -3px; 
+            margin-bottom: 5px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .hero h1 { font-size: 56px; font-weight: 800; color: #1f2937; letter-spacing: -3px; }
-        .hero p { font-size: 13px; text-transform: uppercase; letter-spacing: 4px; color: #b39359; font-weight: 800; }
+        .hero p { 
+            font-size: 14px; 
+            text-transform: uppercase; 
+            letter-spacing: 5px; 
+            color: #b39359; 
+            font-weight: 800;
+        }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
 
         .section-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 800;
             margin-bottom: 40px;
             text-align: center;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #94a3b8;
+            letter-spacing: 4px;
+            color: #475569;
         }
 
-        /* GRID DE PROJETOS ARRUMADO */
+        /* GRID DE PROJETOS - TUDO BLACK */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            margin-bottom: 80px;
         }
 
         .project-card {
-            background: #ffffff;
-            border: 1px solid #e5e1da;
-            border-radius: 24px;
-            padding: 35px;
+            background: #000000; /* CARDS TUDO BLACK */
+            border: 1px solid rgba(179, 147, 89, 0.3); /* Borda dourada sutil */
+            border-radius: 20px;
+            padding: 40px;
             text-decoration: none;
-            color: inherit;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            color: #ffffff;
+            transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-        }
-
-        /* CARD DESTAQUE (SOLLENE) */
-        .featured {
-            background: #1f2937; /* Grafite */
-            border: 2px solid #b39359; /* Dourado */
-            color: #ffffff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(179, 147, 89, 0.15);
-            border-color: #b39359;
+            border-color: #b39359; /* Destaque no ouro ao passar o mouse */
+            box-shadow: 0 15px 30px rgba(179, 147, 89, 0.1);
         }
 
-        .project-card h3 { font-size: 20px; margin-bottom: 12px; font-weight: 800; }
-        .project-card p { font-size: 14px; color: #64748b; margin-bottom: 25px; flex-grow: 1; }
-        
-        /* Texto branco para o card destaque */
-        .featured p { color: #94a3b8; }
-        .featured h3 { color: #b39359; }
+        .project-card h3 { font-size: 20px; margin-bottom: 15px; font-weight: 800; color: #b39359; }
+        .project-card p { font-size: 14px; color: #94a3b8; margin-bottom: 25px; flex-grow: 1; }
 
         .btn-view {
             font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #b39359;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Botão preenchido para o destaque */
-        .featured .btn-view {
-            background: #b39359;
-            color: #1f2937;
-            padding: 8px 16px;
-            border-radius: 8px;
-            width: fit-content;
+            letter-spacing: 2px;
+            color: #ffffff;
+            opacity: 0.7;
         }
 
         footer {
             text-align: center;
-            padding: 60px 20px;
-            font-size: 11px;
-            color: #94a3b8;
-            letter-spacing: 2px;
+            padding: 80px 20px;
+            font-size: 10px;
+            color: #475569;
+            letter-spacing: 3px;
             text-transform: uppercase;
         }
 
         @media(max-width: 768px) {
-            .hero h1 { font-size: 40px; }
-            .profile-photo { width: 120px; height: 120px; }
+            .hero { height: 450px; }
+            .hero h1 { font-size: 48px; }
+            .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <!-- FOTO INTEIRA NO TOPO -->
     <header class="hero">
-        <img src="foto.fabio1.jpg" alt="Fábio" class="profile-photo">
-        <p>IT Student & Aspiring Developer</p>
         <h1>Fábio</h1>
+        <p>Software Development Portfolio</p>
     </header>
 
     <div class="container">
-        <h2 class="section-title">Professional Projects</h2>
+        <h2 class="section-title">Selected Works</h2>
 
         <div class="projects-grid">
-            <!-- PROJETO PRINCIPAL -->
-            <a href="estoque.html" class="project-card featured">
+            <!-- PROJETO ESTOQUE -->
+            <a href="estoque.html" class="project-card">
                 <h3>Sollene Group</h3>
-                <p>Premium Logistics & Global Trade terminal with real-time cargo monitoring and multi-currency support.</p>
-                <div class="btn-view">Access System</div>
+                <p>Global logistics management system with multi-currency tracking and premium interface.</p>
+                <div class="btn-view">View System →</div>
             </a>
 
-            <!-- PROJETOS PADRÃO -->
+            <!-- CURRÍCULO -->
             <a href="resume.pdf" target="_blank" class="project-card">
-                <h3>Curriculum Vitae</h3>
-                <p>Detailed overview of my academic path and my career transition into the IT world.</p>
-                <div class="btn-view">View Document →</div>
+                <h3>Career Path</h3>
+                <p>Curriculum Vitae and professional transition journey into the technology industry.</p>
+                <div class="btn-view">Open Document →</div>
             </a>
 
+            <!-- FINANÇAS -->
             <a href="finance.html" class="project-card">
-                <h3>Financial Tool</h3>
-                <p>Personal finance tracker focused on simplicity and effective budget management.</p>
-                <div class="btn-view">Open Application →</div>
+                <h3>Finance Tool</h3>
+                <p>Custom application for personal wealth management and budget monitoring.</p>
+                <div class="btn-view">Launch App →</div>
             </a>
 
+            <!-- CONVERSOR -->
             <a href="converter.html" class="project-card">
-                <h3>Rate Converter</h3>
-                <p>Real-time currency exchange tool for professional international trading calculations.</p>
-                <div class="btn-view">Use Tool →</div>
+                <h3>Rate Terminal</h3>
+                <p>Real-time exchange calculations for international commercial operations.</p>
+                <div class="btn-view">Start Conversion →</div>
             </a>
         </div>
     </div>
 
     <footer>
-        © 2026 FÁBIO — QUALITY DRIVEN DEVELOPMENT
+        © 2026 FÁBIO — ENGINEERED FOR EXCELLENCE
     </footer>
 
 </body>
 </html>
+
+
