@@ -1,583 +1,175 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Fábio | Portfolio</title>
-
-    <!-- GOOGLE FONT -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <title>Fábio | Tech Portfolio</title>
     <style>
+        @import url('https://googleapis.com');
+        
+        *{ margin:0; padding:0; box-sizing:border-box; }
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: #fdfaf6; /* Creme Sollene */
+            color: #1f2937; /* Grafite Sollene */
+            line-height: 1.6;
         }
 
-        body{
-            font-family:'Plus Jakarta Sans', sans-serif;
-            background:#fdfaf6;
-            color:#1f2937;
-            line-height:1.6;
+        /* HEADER PREMIUM */
+        .hero {
+            padding: 80px 20px 60px;
+            text-align: center;
+            background: #ffffff;
+            border-bottom: 2px solid #b39359;
+            margin-bottom: 60px;
         }
 
-        a{
-            text-decoration:none;
-            color:inherit;
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #b39359;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(179, 147, 89, 0.2);
         }
 
-        img{
-            display:block;
-            width:100%;
+        .hero h1 { font-size: 56px; font-weight: 800; color: #1f2937; letter-spacing: -3px; }
+        .hero p { font-size: 13px; text-transform: uppercase; letter-spacing: 4px; color: #b39359; font-weight: 800; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #94a3b8;
         }
 
-        /* HERO */
-
-        .hero{
-
-            position:relative;
-
-            width:100%;
-            height:100vh;
-
-            overflow:hidden;
-
-            display:flex;
-            align-items:center;
-            justify-content:center;
+        /* GRID DE PROJETOS ARRUMADO */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 80px;
         }
 
-        /* FOTO */
-
-        .hero img{
-
-            position:absolute;
-
-            width:100%;
-            height:100%;
-
-            object-fit:cover;
-
-            top:0;
-            left:0;
+        .project-card {
+            background: #ffffff;
+            border: 1px solid #e5e1da;
+            border-radius: 24px;
+            padding: 35px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
         }
 
-        /* OVERLAY */
-
-        .overlay{
-
-            position:absolute;
-
-            width:100%;
-            height:100%;
-
-            background:
-            linear-gradient(
-                rgba(0,0,0,0.55),
-                rgba(0,0,0,0.70)
-            );
-
-            top:0;
-            left:0;
+        /* CARD DESTAQUE (SOLLENE) */
+        .featured {
+            background: #1f2937; /* Grafite */
+            border: 2px solid #b39359; /* Dourado */
+            color: #ffffff;
         }
 
-        /* HERO CONTENT */
-
-        .hero-content{
-
-            position:relative;
-
-            z-index:10;
-
-            text-align:center;
-
-            padding:20px;
-
-            max-width:900px;
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(179, 147, 89, 0.15);
+            border-color: #b39359;
         }
 
-        .hero-content p{
+        .project-card h3 { font-size: 20px; margin-bottom: 12px; font-weight: 800; }
+        .project-card p { font-size: 14px; color: #64748b; margin-bottom: 25px; flex-grow: 1; }
+        
+        /* Texto branco para o card destaque */
+        .featured p { color: #94a3b8; }
+        .featured h3 { color: #b39359; }
 
-            color:#b39359;
-
-            text-transform:uppercase;
-
-            letter-spacing:4px;
-
-            font-size:13px;
-
-            font-weight:800;
-
-            margin-bottom:20px;
+        .btn-view {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #b39359;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .hero-content h1{
-
-            color:#ffffff;
-
-            font-size:78px;
-
-            font-weight:800;
-
-            line-height:1;
-
-            letter-spacing:-4px;
-
-            margin-bottom:25px;
+        /* Botão preenchido para o destaque */
+        .featured .btn-view {
+            background: #b39359;
+            color: #1f2937;
+            padding: 8px 16px;
+            border-radius: 8px;
+            width: fit-content;
         }
 
-        .hero-content h2{
-
-            color:#e2e8f0;
-
-            font-size:22px;
-
-            font-weight:400;
-
-            max-width:700px;
-
-            margin:0 auto 40px;
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 11px;
+            color: #94a3b8;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        .hero-button{
-
-            display:inline-block;
-
-            background:#b39359;
-
-            color:#ffffff;
-
-            padding:16px 34px;
-
-            border-radius:14px;
-
-            font-size:14px;
-
-            font-weight:700;
-
-            transition:.3s;
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 40px; }
+            .profile-photo { width: 120px; height: 120px; }
         }
-
-        .hero-button:hover{
-
-            transform:translateY(-5px);
-
-            background:#9d7d46;
-        }
-
-        /* CONTAINER */
-
-        .container{
-
-            max-width:1200px;
-
-            margin:0 auto;
-
-            padding:100px 20px;
-        }
-
-        /* TITLE */
-
-        .section-title{
-
-            text-align:center;
-
-            margin-bottom:60px;
-        }
-
-        .section-title p{
-
-            color:#b39359;
-
-            text-transform:uppercase;
-
-            letter-spacing:3px;
-
-            font-size:13px;
-
-            font-weight:800;
-
-            margin-bottom:10px;
-        }
-
-        .section-title h2{
-
-            font-size:42px;
-
-            font-weight:800;
-
-            letter-spacing:-2px;
-        }
-
-        /* GRID */
-
-        .projects-grid{
-
-            display:grid;
-
-            grid-template-columns:
-            repeat(auto-fit,minmax(300px,1fr));
-
-            gap:30px;
-        }
-
-        /* CARD */
-
-        .project-card{
-
-            background:#ffffff;
-
-            border-radius:24px;
-
-            padding:35px;
-
-            border:1px solid #e5e1da;
-
-            transition:0.4s ease;
-
-            box-shadow:
-            0 10px 30px rgba(0,0,0,0.03);
-
-            cursor:pointer;
-        }
-
-        .project-card:hover{
-
-            transform:
-            translateY(-10px)
-            scale(1.02);
-
-            border-color:#b39359;
-
-            box-shadow:
-            0 20px 40px rgba(179,147,89,0.15);
-        }
-
-        /* FEATURED */
-
-        .featured{
-
-            background:#1f2937;
-
-            border:2px solid #b39359;
-
-            color:#ffffff;
-        }
-
-        .project-card h3{
-
-            font-size:24px;
-
-            margin-bottom:15px;
-
-            font-weight:800;
-        }
-
-        .project-card p{
-
-            color:#64748b;
-
-            margin-bottom:25px;
-
-            font-size:15px;
-        }
-
-        .featured p{
-            color:#cbd5e1;
-        }
-
-        /* TAGS */
-
-        .tags{
-
-            display:flex;
-
-            flex-wrap:wrap;
-
-            gap:10px;
-
-            margin-bottom:25px;
-        }
-
-        .tags span{
-
-            background:#f3f4f6;
-
-            padding:7px 14px;
-
-            border-radius:999px;
-
-            font-size:11px;
-
-            font-weight:700;
-
-            color:#475569;
-        }
-
-        .featured .tags span{
-
-            background:#374151;
-
-            color:#ffffff;
-        }
-
-        /* BUTTON */
-
-        .btn-view{
-
-            font-size:12px;
-
-            font-weight:800;
-
-            letter-spacing:1px;
-
-            text-transform:uppercase;
-
-            color:#b39359;
-        }
-
-        .featured .btn-view{
-            color:#ffffff;
-        }
-
-        /* FOOTER */
-
-        footer{
-
-            text-align:center;
-
-            padding:60px 20px;
-
-            color:#94a3b8;
-
-            font-size:12px;
-
-            letter-spacing:1px;
-        }
-
-        /* MOBILE */
-
-        @media(max-width:768px){
-
-            .hero-content h1{
-
-                font-size:48px;
-
-                letter-spacing:-2px;
-            }
-
-            .hero-content h2{
-
-                font-size:18px;
-            }
-
-        }
-
     </style>
-
 </head>
-
 <body>
 
-    <!-- HERO -->
-
     <header class="hero">
-
-        <!-- FOTO -->
-
-        <img src="./foto.fabio1.jpg" alt="Fábio">
-
-        <!-- OVERLAY -->
-
-        <div class="overlay"></div>
-
-        <!-- CONTENT -->
-
-        <div class="hero-content">
-
-            <p>
-                Front-End Developer • UI Enthusiast
-            </p>
-
-            <h1>
-                Fábio de Andrade Carvalho
-            </h1>
-
-            <h2>
-                Building elegant and responsive digital experiences
-                with HTML, CSS and JavaScript.
-            </h2>
-
-            <a href="#projects"
-               class="hero-button">
-
-               View Projects
-
-            </a>
-
-        </div>
-
+        <img src="foto.fabio1.jpg" alt="Fábio" class="profile-photo">
+        <p>IT Student & Aspiring Developer</p>
+        <h1>Fábio</h1>
     </header>
 
-    <!-- CONTENT -->
-
-    <div class="container" id="projects">
-
-        <div class="section-title">
-
-            <p>
-                Portfolio
-            </p>
-
-            <h2>
-                Selected Projects
-            </h2>
-
-        </div>
-
-        <!-- PROJECTS -->
+    <div class="container">
+        <h2 class="section-title">Professional Projects</h2>
 
         <div class="projects-grid">
-
-            <!-- SOLLENE -->
-
-            <a href="./estoque.html"
-               target="_self"
-               class="project-card featured">
-
-                <h3>
-                    Sollene Group
-                </h3>
-
-                <p>
-                    Premium logistics terminal with multi-currency
-                    management and real-time cargo tracking.
-                </p>
-
-                <div class="tags">
-
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-
-                </div>
-
-                <div class="btn-view">
-                    Launch Terminal →
-                </div>
-
+            <!-- PROJETO PRINCIPAL -->
+            <a href="estoque.html" class="project-card featured">
+                <h3>Sollene Group</h3>
+                <p>Premium Logistics & Global Trade terminal with real-time cargo monitoring and multi-currency support.</p>
+                <div class="btn-view">Access System</div>
             </a>
 
-            <!-- RESUME -->
-
-            <a href="./resume.pdf"
-               target="_blank"
-               class="project-card">
-
-                <h3>
-                    Professional Resume
-                </h3>
-
-                <p>
-                    Curriculum Vitae detailing academic background
-                    and transition into technology.
-                </p>
-
-                <div class="tags">
-
-                    <span>Professional</span>
-                    <span>PDF</span>
-                    <span>English</span>
-
-                </div>
-
-                <div class="btn-view">
-                    View PDF →
-                </div>
-
+            <!-- PROJETOS PADRÃO -->
+            <a href="resume.pdf" target="_blank" class="project-card">
+                <h3>Curriculum Vitae</h3>
+                <p>Detailed overview of my academic path and my career transition into the IT world.</p>
+                <div class="btn-view">View Document →</div>
             </a>
 
-            <!-- FINANCE -->
-
-            <a href="./finance.html"
-               target="_self"
-               class="project-card">
-
-                <h3>
-                    Personal Finance
-                </h3>
-
-                <p>
-                    Financial dashboard for tracking balances
-                    and expenses with modern UI.
-                </p>
-
-                <div class="tags">
-
-                    <span>Dashboard</span>
-                    <span>Responsive</span>
-                    <span>UI</span>
-
-                </div>
-
-                <div class="btn-view">
-                    Open App →
-                </div>
-
+            <a href="finance.html" class="project-card">
+                <h3>Financial Tool</h3>
+                <p>Personal finance tracker focused on simplicity and effective budget management.</p>
+                <div class="btn-view">Open Application →</div>
             </a>
 
-            <!-- CONVERTER -->
-
-            <a href="./converter.html"
-               target="_self"
-               class="project-card">
-
-                <h3>
-                    Currency Converter
-                </h3>
-
-                <p>
-                    Real-time exchange tool for fast conversions
-                    between EUR, BRL and USD.
-                </p>
-
-                <div class="tags">
-
-                    <span>JavaScript</span>
-                    <span>API</span>
-                    <span>Tool</span>
-
-                </div>
-
-                <div class="btn-view">
-                    Use Tool →
-                </div>
-
+            <a href="converter.html" class="project-card">
+                <h3>Rate Converter</h3>
+                <p>Real-time currency exchange tool for professional international trading calculations.</p>
+                <div class="btn-view">Use Tool →</div>
             </a>
-
         </div>
-
     </div>
 
-    <!-- FOOTER -->
-
     <footer>
-
-        © 2026 FÁBIO — ENGINEERED FOR EXCELLENCE
-
+        © 2026 FÁBIO — QUALITY DRIVEN DEVELOPMENT
     </footer>
 
 </body>
-
 </html>
-
-
