@@ -1,182 +1,543 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Fábio | Tech Portfolio</title>
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        @import url('https://googleapis.com');
-        
-        *{ margin:0; padding:0; box-sizing:border-box; }
 
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background: #fdfaf6; 
-            color: #1f2937; 
-            line-height: 1.6;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        /* HEADER PREMIUM COM FOTO */
-        .hero {
-            padding: 80px 20px 60px;
-            text-align: center;
-            background: #ffffff;
-            border-bottom: 2px solid #b39359;
-            margin-bottom: 60px;
+        body{
+            font-family:'Plus Jakarta Sans', sans-serif;
+            background:#fdfaf6;
+            color:#1f2937;
+            line-height:1.6;
         }
 
-        /* ESTILO DA SUA FOTO */
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #b39359;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 25px rgba(179, 147, 89, 0.2);
-            transition: transform 0.3s ease;
-        }
-        .profile-photo:hover { transform: scale(1.05); }
-
-        .hero h1 { 
-            font-size: 56px; 
-            font-weight: 800; 
-            letter-spacing: -3px; 
-            color: #1f2937;
-            margin-bottom: 5px;
+        a{
+            text-decoration:none;
+            color:inherit;
         }
 
-        .hero p { 
-            font-size: 13px; 
-            text-transform: uppercase; 
-            letter-spacing: 4px; 
-            color: #b39359; 
-            font-weight: 800;
+        img{
+            max-width:100%;
+            display:block;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero{
+
+            padding:80px 20px 60px;
+
+            text-align:center;
+
+            background:#ffffff;
+
+            border-bottom:2px solid #b39359;
+
+            margin-bottom:60px;
         }
 
-        .section-title {
-            font-size: 20px;
-            font-weight: 800;
-            margin-bottom: 40px;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #94a3b8;
+        /* FOTO */
+
+        .profile-photo{
+
+            width:260px;
+            height:260px;
+
+            object-fit:cover;
+            object-position:center top;
+
+            border-radius:30px;
+
+            border:4px solid #b39359;
+
+            margin:0 auto 30px;
+
+            box-shadow:
+            0 20px 40px rgba(0,0,0,0.10),
+            0 10px 30px rgba(179,147,89,0.20);
+
+            transition:transform 0.4s ease;
         }
 
-        /* GRID DE PROJETOS */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
+        .profile-photo:hover{
+            transform:translateY(-8px);
         }
 
-        .project-card {
-            background: #ffffff;
-            border: 1px solid #e5e1da;
-            border-radius: 24px;
-            padding: 35px;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        .hero p{
+
+            font-size:13px;
+
+            text-transform:uppercase;
+
+            letter-spacing:4px;
+
+            color:#b39359;
+
+            font-weight:800;
+
+            margin-bottom:15px;
         }
 
-        .featured {
-            border: 2px solid #b39359;
-            background: #1f2937;
-            color: #ffffff;
+        .hero h1{
+
+            font-size:62px;
+
+            font-weight:800;
+
+            letter-spacing:-3px;
+
+            margin-bottom:20px;
         }
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(179, 147, 89, 0.15);
-            border-color: #b39359;
+        .hero h2{
+
+            max-width:700px;
+
+            margin:0 auto;
+
+            font-size:19px;
+
+            font-weight:400;
+
+            color:#64748b;
         }
 
-        .project-card h3 { font-size: 22px; margin-bottom: 12px; font-weight: 800; }
-        .project-card p { font-size: 14px; color: #64748b; margin-bottom: 25px; flex-grow: 1; }
-        .featured p { color: #94a3b8; }
+        /* =========================
+           CONTAINER
+        ========================== */
 
-        .btn-view {
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #b39359;
+        .container{
+            max-width:1200px;
+            margin:0 auto;
+            padding:0 20px;
         }
 
-        .featured .btn-view { color: #ffffff; background: #b39359; padding: 10px 20px; border-radius: 10px; width: fit-content; }
+        /* =========================
+           SECTION TITLE
+        ========================== */
 
-        footer {
-            text-align: center;
-            padding: 60px 20px;
-            font-size: 11px;
-            color: #94a3b8;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        .section-title{
+
+            text-align:center;
+
+            margin-bottom:50px;
         }
 
-        @media(max-width: 768px) {
-            .hero h1 { font-size: 42px; }
-            .profile-photo { width: 120px; height: 120px; }
+        .section-title p{
+
+            font-size:13px;
+
+            color:#b39359;
+
+            text-transform:uppercase;
+
+            letter-spacing:3px;
+
+            font-weight:800;
+
+            margin-bottom:10px;
         }
+
+        .section-title h2{
+
+            font-size:40px;
+
+            letter-spacing:-2px;
+
+            font-weight:800;
+        }
+
+        /* =========================
+           PROJECT GRID
+        ========================== */
+
+        .projects-grid{
+
+            display:grid;
+
+            grid-template-columns:
+            repeat(auto-fit,minmax(300px,1fr));
+
+            gap:30px;
+
+            margin-bottom:80px;
+        }
+
+        /* =========================
+           PROJECT CARD
+        ========================== */
+
+        .project-card{
+
+            background:#ffffff;
+
+            border:1px solid #e5e1da;
+
+            border-radius:24px;
+
+            padding:35px;
+
+            transition:all 0.4s ease;
+
+            display:flex;
+
+            flex-direction:column;
+
+            box-shadow:
+            0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .project-card:hover{
+
+            transform:
+            translateY(-10px)
+            scale(1.02);
+
+            box-shadow:
+            0 20px 40px rgba(179,147,89,0.15);
+
+            border-color:#b39359;
+        }
+
+        /* FEATURED CARD */
+
+        .featured{
+
+            background:#1f2937;
+
+            color:#ffffff;
+
+            border:2px solid #b39359;
+        }
+
+        .project-card h3{
+
+            font-size:24px;
+
+            margin-bottom:15px;
+
+            font-weight:800;
+        }
+
+        .project-card p{
+
+            font-size:15px;
+
+            color:#64748b;
+
+            margin-bottom:25px;
+
+            flex-grow:1;
+        }
+
+        .featured p{
+            color:#cbd5e1;
+        }
+
+        /* TAGS */
+
+        .tags{
+
+            display:flex;
+
+            gap:10px;
+
+            flex-wrap:wrap;
+
+            margin-bottom:25px;
+        }
+
+        .tags span{
+
+            background:#f3f4f6;
+
+            padding:7px 14px;
+
+            border-radius:999px;
+
+            font-size:11px;
+
+            font-weight:700;
+
+            color:#475569;
+        }
+
+        .featured .tags span{
+
+            background:#374151;
+
+            color:#ffffff;
+        }
+
+        /* BUTTON */
+
+        .btn-view{
+
+            font-size:12px;
+
+            font-weight:800;
+
+            text-transform:uppercase;
+
+            letter-spacing:1px;
+
+            color:#b39359;
+        }
+
+        .featured .btn-view{
+
+            color:#ffffff;
+
+            background:#b39359;
+
+            padding:10px 20px;
+
+            border-radius:10px;
+
+            width:fit-content;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer{
+
+            text-align:center;
+
+            padding:60px 20px;
+
+            font-size:11px;
+
+            color:#94a3b8;
+
+            letter-spacing:1px;
+
+            text-transform:uppercase;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media(max-width:768px){
+
+            .hero h1{
+                font-size:42px;
+            }
+
+            .hero h2{
+                font-size:17px;
+            }
+
+            .profile-photo{
+
+                width:190px;
+                height:190px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 <body>
 
+    <!-- HERO -->
+
     <header class="hero">
-        <!-- SUA FOTO ADICIONADA AQUI -->
-        <img src="foto.fabio1.jpg" alt="Fábio" class="profile-photo">
-        <p>IT Student & Aspiring Developer</p>
-        <h1>Fábio</h1>
+
+        <!-- FOTO -->
+
+        <img src="fotofabio.jpg"
+             alt="Fábio"
+             class="profile-photo">
+
+        <p>
+            Front-End Developer • UI Enthusiast
+        </p>
+
+        <h1>
+            Fábio de Andrade Carvalho
+        </h1>
+
+        <h2>
+            Building elegant and responsive digital experiences
+            with HTML, CSS and JavaScript.
+        </h2>
+
     </header>
 
+    <!-- CONTENT -->
+
     <div class="container">
-        <h2 class="section-title">Selected Projects</h2>
+
+        <!-- SECTION TITLE -->
+
+        <div class="section-title">
+
+            <p>
+                Portfolio
+            </p>
+
+            <h2>
+                Selected Projects
+            </h2>
+
+        </div>
+
+        <!-- PROJECT GRID -->
 
         <div class="projects-grid">
-            <a href="estoque.html" class="project-card featured">
-                <h3>Sollene Group</h3>
-                <p>Premium Logistics terminal with multi-currency management and real-time cargo tracking.</p>
-                <div class="btn-view">Launch Terminal</div>
+
+            <!-- SOLLENE -->
+
+            <a href="estoque.html"
+               class="project-card featured">
+
+                <h3>
+                    Sollene Group
+                </h3>
+
+                <p>
+                    Premium logistics terminal with multi-currency
+                    management and real-time cargo tracking.
+                </p>
+
+                <div class="tags">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+
+                </div>
+
+                <div class="btn-view">
+                    Launch Terminal
+                </div>
+
             </a>
 
-            <a href="resume.pdf" target="_blank" class="project-card">
-                <h3>Professional Resume</h3>
-                <p>Curriculum Vitae detailing my academic background and career transition.</p>
-                <div class="btn-view">View PDF →</div>
+            <!-- RESUME -->
+
+            <a href="resume.pdf"
+               target="_blank"
+               class="project-card">
+
+                <h3>
+                    Professional Resume
+                </h3>
+
+                <p>
+                    Curriculum Vitae detailing my academic background
+                    and career transition into the technology industry.
+                </p>
+
+                <div class="tags">
+
+                    <span>PDF</span>
+                    <span>English</span>
+                    <span>Professional</span>
+
+                </div>
+
+                <div class="btn-view">
+                    View PDF →
+                </div>
+
             </a>
 
-            <a href="finance.html" class="project-card">
-                <h3>Personal Finance</h3>
-                <p>Management tool built to track balances and expenses with a clean interface.</p>
-                <div class="btn-view">Open App →</div>
+            <!-- FINANCE -->
+
+            <a href="finance.html"
+               class="project-card">
+
+                <h3>
+                    Personal Finance
+                </h3>
+
+                <p>
+                    Financial management tool built to track balances
+                    and expenses with a clean modern interface.
+                </p>
+
+                <div class="tags">
+
+                    <span>Dashboard</span>
+                    <span>Responsive</span>
+                    <span>UI</span>
+
+                </div>
+
+                <div class="btn-view">
+                    Open App →
+                </div>
+
             </a>
 
-            <a href="converter.html" class="project-card">
-                <h3>Currency Converter</h3>
-                <p>Real-time exchange tool for quick conversions between EUR, BRL and USD.</p>
-                <div class="btn-view">Use Tool →</div>
+            <!-- CONVERTER -->
+
+            <a href="converter.html"
+               class="project-card">
+
+                <h3>
+                    Currency Converter
+                </h3>
+
+                <p>
+                    Real-time exchange tool for quick conversions
+                    between EUR, BRL and USD currencies.
+                </p>
+
+                <div class="tags">
+
+                    <span>JavaScript</span>
+                    <span>API</span>
+                    <span>Tool</span>
+
+                </div>
+
+                <div class="btn-view">
+                    Use Tool →
+                </div>
+
             </a>
+
         </div>
+
     </div>
 
+    <!-- FOOTER -->
+
     <footer>
+
         © 2026 FÁBIO — ENGINEERED FOR EXCELLENCE
+
     </footer>
 
 </body>
+
 </html>
-
-
-         
