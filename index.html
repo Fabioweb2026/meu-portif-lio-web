@@ -1,10 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fábio | Portfólio Web</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fábio | Portfólio Web</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #333;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #003366, #0055aa);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* NAV */
+nav {
+    background: #111;
+    text-align: center;
+    padding: 12px;
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SEÇÕES */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* GRID */
+.grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    width: 280px;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* IMAGEM */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* BOTÃO */
+button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    background: #0055aa;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #003f80;
+}
+
+/* FOOTER */
+footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+
 </head>
 
 <body>
@@ -37,12 +134,12 @@
 
         <div class="card">
             <h3>Portfólio Web</h3>
-            <p>Site pessoal responsivo com HTML, CSS e JS.</p>
+            <p>Site pessoal criado com HTML e CSS responsivo.</p>
         </div>
 
         <div class="card">
             <h3>Sistema de Estoque</h3>
-            <p>Controle de produtos e organização de dados.</p>
+            <p>Projeto de controle e organização de produtos.</p>
         </div>
 
     </div>
@@ -50,32 +147,30 @@
 
 <!-- MALTA -->
 <section id="malta">
-    <h2>Projeto Malta 🇲🇹</h2>
+    <h2>Malta 🇲🇹</h2>
 
     <div class="grid">
 
         <div class="card">
             <img src="img/malta1.jpg" alt="Blue Lagoon">
             <h3>Blue Lagoon</h3>
-            <p>Uma das praias mais bonitas de Malta.</p>
-            <button onclick="showInfo('Blue Lagoon')">Saiba mais</button>
+            <p>Uma das praias mais bonitas da Europa.</p>
+            <button onclick="alert('Blue Lagoon - Malta 🇲🇹')">Saiba mais</button>
         </div>
 
         <div class="card">
             <img src="img/malta2.jpg" alt="Valletta">
             <h3>Valletta</h3>
             <p>Capital histórica e cultural de Malta.</p>
-            <button onclick="showInfo('Valletta')">Saiba mais</button>
+            <button onclick="alert('Valletta - Malta 🇲🇹')">Saiba mais</button>
         </div>
 
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Fábio de Andrade Carvalho | Portfólio Web</p>
+    <p>© 2026 Fábio | Portfólio Profissional</p>
 </footer>
-
-<script src="script.js"></script>
 
 </body>
 </html>
