@@ -6,61 +6,85 @@
     <title>Fábio | Portfólio Profissional</title>
     <style>
         @import url('https://googleapis.com');
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f4f1ea; color: #1a1a1a; }
+
+        /* FOTO DO TOPO (HERO) */
         .hero {
             width: 100%; height: 95vh;
             background: linear-gradient(to bottom, rgba(244, 241, 234, 0) 40%, #f4f1ea 100%), 
                         url('foto.fabio1.jpg') no-repeat center center;
             background-size: cover; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; text-align: center; padding-bottom: 80px;
         }
+
         .hero h1 { font-size: clamp(60px, 10vw, 120px); font-weight: 800; color: #000; letter-spacing: -5px; line-height: 0.8; }
         .hero p { font-size: 14px; text-transform: uppercase; letter-spacing: 6px; color: #b39359; font-weight: 800; margin-top: 20px; }
+
+        /* GRID DE PROJETOS */
         .container { max-width: 1200px; margin: -60px auto 50px; padding: 0 20px; position: relative; z-index: 10; }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        
+        .projects-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 25px; 
+        }
+
         .project-card {
             background: #000; border: 1px solid #b39359; border-radius: 28px; padding: 30px;
-            text-decoration: none; color: #fff; transition: 0.4s ease; display: flex; flex-direction: column; min-height: 400px;
+            text-decoration: none; color: #fff; transition: 0.4s ease; display: flex; flex-direction: column;
+            min-height: 420px;
         }
+
         .project-card:hover { transform: translateY(-15px); box-shadow: 0 30px 60px rgba(179, 147, 89, 0.25); }
+        
         .project-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 18px; margin-bottom: 20px; border: 1px solid #222; }
+        
         .project-card h3 { font-size: 24px; margin-bottom: 10px; color: #b39359; font-weight: 800; }
         .project-card p { font-size: 14px; color: #aaa; line-height: 1.5; }
+
         footer { text-align: center; padding: 100px 20px; font-size: 12px; color: #8c8c8c; }
     </style>
 </head>
 <body>
+
     <header class="hero">
         <h1>Fábio</h1>
         <p>EXPERT SOLUTIONS & MANAGEMENT</p>
     </header>
+
     <div class="container">
         <div class="projects-grid">
-            <!-- Projeto Sollene -->
+            
+            <!-- CARD 1: Sollene Group -->
             <a href="estoque.html" class="project-card">
                 <img src="sollene-group.jpg" alt="Sollene Group"> 
                 <h3>Sollene Group</h3>
                 <p>Terminal de logística premium e gestão de ativos globais.</p>
             </a>
 
-            <!-- Projeto Malta CORRIGIDO (puxando o .png direto da pasta principal) -->
+            <!-- CARD 2: Malta | Giorgios (Ajustado para .png) -->
             <a href="malta.html" class="project-card">
                 <img src="giorgios1.png" alt="Giorgios Malta"> 
                 <h3>Malta | Giorgios</h3>
-                <p>Experiência gastronômica e visual da melhor cafeteria de Sliema.</p>
+                <p>Projeto visual da cafeteria premium em Sliema, Malta.</p>
             </a>
 
-            <!-- Card Currículo -->
+            <!-- CARD 3: Currículo -->
             <a href="resume.pdf" target="_blank" class="project-card">
-                <div style="height: 180px; background: #111; border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                <div style="height: 180px; background: #111; border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid #333;">
                     <span style="color: #b39359; font-size: 40px; font-weight: 800;">CV</span>
                 </div>
                 <h3>Currículo</h3>
                 <p>Trajetória profissional e especializações técnicas em TI.</p>
             </a>
+
         </div>
     </div>
+
     <footer>© 2026 FÁBIO — PRESTIGE IN TECHNOLOGY</footer>
+
 </body>
 </html>
+
 
