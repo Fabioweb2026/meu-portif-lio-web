@@ -3,76 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fábio | Portfólio Web</title>
-<link rel="stylesheet" href="style.css">
+<title>Fábio | Portfólio</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+    color: #222;
+    text-align: center;
+}
+
+header {
+    background: #003366;
+    color: white;
+    padding: 40px 20px;
+}
+
+section {
+    padding: 30px 20px;
+}
+
+.card {
+    background: white;
+    width: 260px;
+    margin: 15px auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+</style>
+
 </head>
 
 <body>
 
-<header class="hero">
+<header>
     <h1>Fábio de Andrade Carvalho</h1>
-    <p>Web Developer | HTML | CSS | JavaScript</p>
+    <p>Portfólio Web - Versão Básica Estável</p>
 </header>
 
-<nav>
-    <a href="#about">Sobre</a>
-    <a href="#projects">Projetos</a>
-    <a href="#malta">Malta</a>
-</nav>
-
-<section id="about">
+<section>
     <h2>Sobre mim</h2>
-    <p>
-        Professor de idiomas em transição para desenvolvimento web.
-        Focado em HTML, CSS e JavaScript.
-    </p>
+    <p>Professor de idiomas em transição para desenvolvimento web.</p>
 </section>
 
-<section id="projects">
+<section>
     <h2>Projetos</h2>
 
-    <div class="grid">
-
-        <div class="card">
-            <h3>Portfólio Web</h3>
-            <p>Site pessoal responsivo.</p>
-        </div>
-
-        <div class="card">
-            <h3>Sistema Estoque</h3>
-            <p>Controle de produtos simples.</p>
-        </div>
-
+    <div class="card">
+        <h3>Portfólio</h3>
+        <p>Site simples em HTML e CSS.</p>
     </div>
+
 </section>
 
-<section id="malta">
+<section>
     <h2>Malta 🇲🇹</h2>
 
-    <div class="grid">
-
-        <div class="card">
-            <img src="img/malta1.jpg">
-            <h3>Blue Lagoon</h3>
-            <p>Praia famosa de Malta.</p>
-            <button onclick="showInfo('Blue Lagoon')">Saiba mais</button>
-        </div>
-
-        <div class="card">
-            <img src="img/malta2.jpg">
-            <h3>Valletta</h3>
-            <p>Capital histórica de Malta.</p>
-            <button onclick="showInfo('Valletta')">Saiba mais</button>
-        </div>
-
+    <div class="card">
+        <img src="img/malta1.jpg" alt="Malta">
+        <h3>Blue Lagoon</h3>
+        <p>Praia famosa de Malta.</p>
     </div>
+
 </section>
-
-<footer>
-    <p>© 2026 Fábio | Portfólio Web</p>
-</footer>
-
-<script src="script.js"></script>
 
 </body>
 </html>
+
