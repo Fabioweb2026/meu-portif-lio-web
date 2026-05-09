@@ -3,37 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giorgios Cafeteria | Malta</title>
+    <title>Fábio | Portfólio Profissional</title>
     <style>
         @import url('https://googleapis.com');
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #fdfaf6; color: #2c1e1a; }
-        .back-link { position: absolute; top: 20px; left: 20px; text-decoration: none; color: #fff; font-weight: 800; font-size: 11px; text-transform: uppercase; background: rgba(0,0,0,0.5); padding: 10px 20px; border-radius: 50px; backdrop-filter: blur(5px); z-index: 100; }
-        .hero { width: 100%; height: 60vh; background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('img/giorgios-capa.jpg') no-repeat center center; background-size: cover; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 80px; }
-        .content { max-width: 900px; margin: -50px auto 50px; background: #fff; padding: 60px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.05); position: relative; }
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
-        .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 20px; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f4f1ea; color: #1a1a1a; }
+
+        .hero {
+            width: 100%; height: 95vh;
+            background: linear-gradient(to bottom, rgba(244, 241, 234, 0) 40%, #f4f1ea 100%), 
+                        url('foto.fabio1.jpg') no-repeat center center;
+            background-size: cover; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; text-align: center; padding-bottom: 80px;
+        }
+
+        .hero h1 { font-size: clamp(60px, 10vw, 120px); font-weight: 800; color: #000; letter-spacing: -5px; line-height: 0.8; }
+        .hero p { font-size: 14px; text-transform: uppercase; letter-spacing: 6px; color: #b39359; font-weight: 800; margin-top: 20px; }
+
+        .container { max-width: 1200px; margin: -40px auto 50px; padding: 0 20px; position: relative; z-index: 10; }
+        
+        /* Ajuste para caber 3 cards agora */
+        .projects-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 25px; 
+        }
+
+        .project-card {
+            background: #000; border: 1px solid #b39359; border-radius: 28px; padding: 30px;
+            text-decoration: none; color: #fff; transition: 0.4s ease; display: flex; flex-direction: column;
+        }
+
+        .project-card:hover { transform: translateY(-15px); box-shadow: 0 30px 60px rgba(179, 147, 89, 0.25); }
+        .project-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 18px; margin-bottom: 20px; border: 1px solid #222; }
+        .project-card h3 { font-size: 24px; margin-bottom: 10px; color: #b39359; font-weight: 800; }
+        .project-card p { font-size: 14px; color: #aaa; line-height: 1.5; }
+
+        footer { text-align: center; padding: 100px 20px; font-size: 12px; color: #8c8c8c; }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-link">← Voltar ao Portfólio</a>
+
     <header class="hero">
-        <h1>Giorgios</h1>
-        <p>A Essência de Malta em Sliema</p>
+        <h1>Fábio</h1>
+        <p>EXPERT SOLUTIONS & MANAGEMENT</p>
     </header>
-    <div class="content">
-        <h2>Experiência Gastronômica</h2>
-        <p>Localizada em frente ao mar, a Giorgios é o ponto de encontro mais sofisticado de Malta.</p>
-        <div class="gallery">
-            <img src="img/giorgios1.jpg" alt="Café">
-            <img src="img/giorgios2.jpg" alt="Malta">
-            <img src="img/giorgios3.jpg" alt="Sobremesas">
+
+    <div class="container">
+        <div class="projects-grid">
+            
+            <!-- CARD 1: Sollene Group -->
+            <a href="estoque.html" class="project-card">
+                <img src="sollene-group.jpg" alt="Sollene Group"> 
+                <h3>Sollene Group</h3>
+                <p>Terminal de logística premium para gestão de ativos globais.</p>
+            </a>
+
+            <!-- CARD 2: Malta (Giorgios) - NOVO LINK -->
+            <a href="malta.html" class="project-card">
+                <img src="img/giorgios1.jpg" alt="Giorgios Malta"> 
+                <h3>Malta | Giorgios</h3>
+                <p>Experiência gastronômica e visual da melhor cafeteria de Sliema.</p>
+            </a>
+
+            <!-- CARD 3: Currículo -->
+            <a href="resume.pdf" target="_blank" class="project-card">
+                <h3>Currículo</h3>
+                <p>Trajetória profissional e especializações técnicas em TI.</p>
+            </a>
+
         </div>
     </div>
+
+    <footer>© 2026 FÁBIO — PRESTIGE IN TECHNOLOGY</footer>
+
 </body>
 </html>
-
 
 
 
