@@ -13,29 +13,37 @@
     box-sizing: border-box;
 }
 
+/* 🌄 FUNDO COM IMAGEM */
 body {
     font-family: Arial, sans-serif;
+    background-image: url('foto.fabio1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #1f2937;
+}
 
-    /* 🔥 CINZA GRAFITE PROFISSIONAL */
-    background: #0f172a;
-    color: #e5e7eb;
+/* 🟡 OVERLAY CREME ELEGANTE */
+.overlay {
+    background: rgba(245, 240, 225, 0.90);
+    min-height: 100vh;
+    padding-bottom: 60px;
 }
 
 /* HEADER */
 header {
     text-align: center;
     padding: 70px 20px 30px;
-    background: #111827;
-    border-bottom: 1px solid #1f2937;
 }
 
 header h1 {
     font-size: 42px;
     margin-bottom: 10px;
+    color: #1f2937;
 }
 
 header p {
-    color: #f5c542;
+    color: #6b4f2a;
     font-size: 16px;
 }
 
@@ -50,7 +58,7 @@ header p {
 h2 {
     margin-bottom: 20px;
     text-align: center;
-    color: #f5c542;
+    color: #1f2937;
 }
 
 /* GRID */
@@ -62,18 +70,18 @@ h2 {
 
 /* CARD */
 .card {
-    background: #111827;
-    border: 1px solid #1f2937;
+    background: #ffffff;
+    border: 1px solid #e5dcc8;
     border-radius: 16px;
     padding: 20px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     transition: 0.3s;
     text-align: center;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    border-color: #f5c542;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
 /* BOTÃO */
@@ -81,8 +89,8 @@ h2 {
     display: inline-block;
     margin-top: 12px;
     padding: 10px 16px;
-    background: #f5c542;
-    color: #111;
+    background: #6b4f2a;
+    color: #fff;
     font-weight: bold;
     text-decoration: none;
     border-radius: 8px;
@@ -90,7 +98,7 @@ h2 {
 }
 
 .card a:hover {
-    background: #d4af37;
+    background: #8a6638;
 }
 
 /* FOOTER */
@@ -98,16 +106,16 @@ footer {
     text-align: center;
     margin-top: 50px;
     padding: 20px;
-    background: #111827;
-    color: #9ca3af;
+    color: #6b4f2a;
     font-size: 13px;
-    border-top: 1px solid #1f2937;
 }
 </style>
 
 </head>
 
 <body>
+
+<div class="overlay">
 
 <!-- HEADER -->
 <header>
@@ -122,7 +130,7 @@ footer {
 
 <div class="grid">
 
-    <!-- SOLLENE -->
+    <!-- SOLLENE GROUP -->
     <div class="card">
         <h3>Sollene Group</h3>
         <p>Sistema de estoque com entrada, saída e controle de produtos.</p>
@@ -154,8 +162,8 @@ footer {
 <!-- MALTA -->
 <section style="margin-top:60px;">
     <h2>Projeto Malta 🇲🇹</h2>
-    <p style="text-align:center; color:#9ca3af;">
-        Projeto de estudo com imagens de Malta.
+    <p style="text-align:center; color:#6b4f2a;">
+        Projeto de estudo com imagens e pontos turísticos de Malta.
     </p>
 </section>
 
@@ -165,6 +173,8 @@ footer {
 <footer>
     © 2026 Fábio de Andrade Carvalho | Portfólio Web
 </footer>
+
+</div>
 
 </body>
 </html>
