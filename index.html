@@ -3,191 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fábio | Professional Portfolio</title>
-    <!-- Fontes Corrigidas -->
+    <title>Fábio | Portfolio</title>
     <link href="https://googleapis.com" rel="stylesheet">
-    
     <style>
-        /* RESET & BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #000;
-            color: white;
-            opacity: 0;
-            animation: fadeInPage 1.5s ease-out forwards;
-            overflow-x: hidden;
-        }
-
-        @keyframes fadeInPage {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* HERO SECTION */
-        .hero {
-            width: 100%;
-            height: 90vh;
-            /* Verifique se a imagem se chama exatamente: foto.fabio1.jpg */
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 50%, #000 100%), url('foto.fabio1.jpg') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            text-align: center;
-            padding-bottom: 60px;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(60px, 12vw, 130px);
-            font-weight: 800;
-            letter-spacing: -4px;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 8px;
-            color: #f1c40f;
-            font-weight: 700;
-        }
-
-        /* PROJECTS SECTION */
-        .projects-section {
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            color: #f1c40f;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 60px;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            padding: 50px 30px;
-            text-align: center;
-            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(15px);
-        }
-
-        .project-card:hover {
-            transform: translateY(-15px);
-            background: rgba(255, 255, 255, 0.07);
-            border-color: #f1c40f;
-            box-shadow: 0 20px 40px rgba(241, 196, 15, 0.15);
-        }
-
-        .project-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-
-        .project-card p {
-            font-size: 15px;
-            color: #aaa;
-            margin-bottom: 40px;
-            line-height: 1.6;
-            min-height: 60px;
-        }
-
-        /* GOLDEN BUTTON */
-        .btn-project {
-            display: inline-block;
-            background-color: transparent;
-            color: #f1c40f;
-            padding: 12px 35px;
-            border: 2px solid #f1c40f;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: 0.3s;
-        }
-
-        .btn-project:hover {
-            background-color: #f1c40f;
-            color: #000;
-            box-shadow: 0 0 20px rgba(241, 196, 15, 0.4);
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 80px 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 11px;
-            color: #555;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 768px) {
-            .projects-grid { grid-template-columns: 1fr; }
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #000; color: #fff; text-align: center; }
+        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(to bottom, rgba(0,0,0,0.3), #000), url('foto.fabio1.jpg') center/cover; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 80px; margin-bottom: 10px; }
+        .gold { color: #f1c40f; letter-spacing: 5px; font-size: 12px; font-weight: 800; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: -50px auto 50px; padding: 0 20px; }
+        .card { background: #111; padding: 40px; border-radius: 20px; border: 1px solid #333; transition: 0.3s; }
+        .card:hover { border-color: #f1c40f; transform: translateY(-10px); }
+        .btn { display: inline-block; margin-top: 20px; padding: 10px 30px; border: 2px solid #f1c40f; color: #f1c40f; text-decoration: none; border-radius: 50px; font-weight: 800; font-size: 12px; }
+        .btn:hover { background: #f1c40f; color: #000; }
     </style>
 </head>
 <body>
-
-    <header class="hero">
+    <div class="hero">
         <h1>Fábio</h1>
-        <p>EXPERT SOLUTIONS & MANAGEMENT</p>
-    </header>
-
-    <section class="projects-section">
-        <h2 class="section-title">Featured Projects</h2>
-        
-        <div class="projects-grid">
-            
-            <div class="project-card">
-                <h3>Sollene Group</h3>
-                <p>Advanced inventory system for professional stock management and control.</p>
-                <!-- Verifique se o arquivo se chama exatamente: estoque.html -->
-                <a href="estoque.html" class="btn-project">View Project</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Malta Experience</h3>
-                <p>A premium travel guide showcasing the beauty of the Maltese islands.</p>
-                <!-- Verifique se o arquivo se chama exatamente: malta.html -->
-                <a href="malta.html" class="btn-project">View Project</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Technical Resume</h3>
-                <p>Professional trajectory and specialized IT technical certifications.</p>
-                <!-- Verifique se o arquivo se chama exatamente: resume.pdf -->
-                <a href="resume.pdf" target="_blank" class="btn-project">Open PDF</a>
-            </div>
-
-        </div>
-    </section>
-
-    <footer>
-        © 2026 FÁBIO — PRESTIGE IN TECHNOLOGY
-    </footer>
-
+        <p class="gold">EXPERT SOLUTIONS & MANAGEMENT</p>
+    </div>
+    <div class="grid">
+        <div class="card"><h3>Sollene Group</h3><p>Inventory System</p><a href="estoque.html" class="btn">VIEW PROJECT</a></div>
+        <div class="card"><h3>Malta Experience</h3><p>Premium Travel Guide</p><a href="malta.html" class="btn">VIEW PROJECT</a></div>
+        <div class="card"><h3>Resume</h3><p>Technical Background</p><a href="resume.pdf" target="_blank" class="btn">OPEN PDF</a></div>
+    </div>
+    <footer style="padding: 50px; color: #444; font-size: 10px;">© 2026 FÁBIO — PRESTIGE IN TECHNOLOGY</footer>
 </body>
 </html>
 
