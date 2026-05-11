@@ -6,7 +6,7 @@
     <title>Fabio Web | Portfolio</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* FUNDO DA PÁGINA COM SUA FOTO */
+        /* BASE & BACKGROUND */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
@@ -16,6 +16,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            /* Sua foto no fundo com filtro escuro para leitura */
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('foto.fabio1.jpg');
             background-size: cover;
             background-position: center;
@@ -33,7 +34,7 @@
             text-transform: uppercase;
         }
 
-        /* ORGANIZAÇÃO DOS TRÊS CARDS */
+        /* GRID LAYOUT */
         .projects-grid {
             display: flex;
             flex-wrap: wrap;
@@ -43,7 +44,7 @@
             width: 100%;
         }
 
-        /* ESTILO DOS CARDS */
+        /* CARD STYLE */
         .card {
             background: rgba(26, 26, 26, 0.95); 
             width: 320px;
@@ -103,7 +104,7 @@
             <p>International inventory management system with automated financial calculations between Brazil and Malta.</p>
         </a>
 
-        <!-- CARD 2: MALTA -->
+        <!-- CARD 2: MALTA PROJECT -->
         <a href="https://github.io" class="card" target="_blank">
             <div class="card-icon">🌍</div>
             <h3>Malta Project</h3>
@@ -121,3 +122,4 @@
 
 </body>
 </html>
+
