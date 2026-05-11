@@ -46,8 +46,8 @@
         /* ESTILO DO CARD */
         .card {
             background: rgba(26, 26, 26, 0.95); 
-            width: 320px;
-            padding: 45px 30px;
+            width: 340px; /* Aumentei levemente a largura do card */
+            padding: 40px 25px;
             border-radius: 25px;
             text-decoration: none;
             color: #fff;
@@ -57,7 +57,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
             backdrop-filter: blur(10px);
         }
 
@@ -67,10 +67,10 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
         }
 
-        /* CONTAINER PARA A IMAGEM DO LOGO */
+        /* AJUSTE PARA O LOGO FICAR MAIOR */
         .card-logo {
             width: 100%;
-            height: 100px;
+            height: 140px; /* Aumentado de 100px para 140px */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -78,9 +78,15 @@
         }
 
         .card-logo img {
-            max-width: 150px; /* Ajuste o tamanho aqui */
+            width: 90%; /* Força a imagem a ocupar quase toda a largura do card */
+            max-width: 260px; /* Aumentado de 150px para 260px */
             max-height: 100%;
             object-fit: contain;
+        }
+
+        .card-icon-emoji {
+            font-size: 70px; /* Aumentado para combinar com o logo novo */
+            color: #b39359;
         }
 
         .card h3 {
@@ -88,6 +94,7 @@
             color: #b39359;
             letter-spacing: 1px;
             text-transform: uppercase;
+            margin-top: 5px;
         }
 
         .card p {
@@ -107,10 +114,9 @@
 
     <div class="projects-grid">
         
-        <!-- CARD SOLLENE GROUP COM LOGO PNG -->
+        <!-- CARD SOLLENE GROUP COM LOGO AMPLIADO -->
         <a href="estoque.html" class="card">
             <div class="card-logo">
-                <!-- O %20 substitui o espaço no link para o navegador não bugar -->
                 <img src="imagem.Sollene%20Group.png" alt="Sollene Group Logo">
             </div>
             <h3>Sollene Group</h3>
@@ -120,7 +126,7 @@
         <!-- CARD MALTA PROJECT -->
         <a href="malta.html" class="card">
             <div class="card-logo">
-               <span style="font-size: 60px;">🌍</span>
+               <span class="card-icon-emoji">🌍</span>
             </div>
             <h3>Malta Project</h3>
             <p>Institutional platform focused on business expansion and premium global logistics.</p>
@@ -129,7 +135,7 @@
         <!-- CARD RESUME -->
         <a href="resume.pdf" class="card" target="_blank">
             <div class="card-logo">
-                <span style="font-size: 60px;">📄</span>
+                <span class="card-icon-emoji">📄</span>
             </div>
             <h3>Summary</h3>
             <p>Expert in combining technology and business vision to create efficient solutions with high-end visual standards.</p>
