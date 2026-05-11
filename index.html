@@ -6,81 +6,137 @@
     <title>Fabio Web | Portfolio</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
+        /* 1. FUNDO E BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('foto.fabio1.jpg');
-            background-size: cover; background-position: center; background-attachment: fixed;
-            color: #fff; padding: 40px 20px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            padding: 40px 20px;
         }
-        h1 { font-size: 2.2rem; margin-bottom: 40px; text-align: center; letter-spacing: 2px; color: #b39359; text-transform: uppercase; }
-        .projects-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; max-width: 1200px; width: 100%; }
-        
-        /* ESTILO DO CARD */
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            letter-spacing: 2px;
+            color: #b39359;
+            text-transform: uppercase;
+        }
+
+        /* 2. GRID PARA FICAR UM AO LADO DO OUTRO */
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* 3. ESTILO DO CARD */
         .card {
-            background: rgba(26, 26, 26, 0.95); width: 380px; border-radius: 25px;
-            text-decoration: none; color: #fff; border: 1px solid rgba(179, 147, 89, 0.3);
-            transition: 0.4s; overflow: hidden; display: flex; flex-direction: column; backdrop-filter: blur(10px);
+            background: rgba(26, 26, 26, 0.95); 
+            width: 350px; 
+            border-radius: 25px;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid rgba(179, 147, 89, 0.3);
+            transition: 0.4s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
         }
-        .card:hover { transform: translateY(-10px); border-color: #b39359; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); }
 
-        /* BANNER SOLLENE */
-        .card-banner { width: 100%; margin: 0; padding: 0; }
-        .card-banner img { width: 100%; height: auto; display: block; }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #b39359;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        }
 
-        /* CONTEÚDO */
-        .card-content { padding: 25px; text-align: center; }
-        .card h3 { font-size: 1.4rem; color: #b39359; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 15px; }
-        .card p { font-size: 0.95rem; color: #ddd; line-height: 1.6; }
-        
-        .card-icon-emoji { font-size: 70px; margin: 20px 0; display: block; color: #b39359; }
+        .card-banner {
+            width: 100%;
+            overflow: hidden;
+        }
 
-        @media (max-width: 768px) { .card { width: 100%; } }
+        .card-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .card-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            color: #b39359;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        .card-icon-emoji {
+            font-size: 70px;
+            margin: 20px 0;
+            display: block;
+            color: #b39359;
+        }
+
+        @media (max-width: 768px) {
+            .card { width: 100%; }
+        }
     </style>
 </head>
 <body>
 
-  <h1>Web Portfolio</h1> 
-<div class="projects-grid"> 
-    <!-- CARD SOLLENE GROUP --> 
-    <a href="./estoque.html" class="card"> 
-        <div class="card-banner"> 
-            <img src="imagem.Sollene%20Group.png" alt="Sollene Group Banner"> 
-        </div> 
-        <div class="card-content"> 
-            <h3>Sollene Group</h3> 
-            <p>International inventory management system with automated financial calculations between Brazil and Malta.</p> 
-        </div> 
-    </a> 
-    
-    <!-- Aqui você pode adicionar os outros cards (Malta e Resume) depois -->
-</div>
+    <h1>Web Portfolio</h1>
 
- 
-   
-</a>
-
-        <p>International inventory management system with automated financial calculations between Brazil and Malta.</p> 
-    </div> 
-</a>
-
-
-        <!-- CARD MALTA PROJECT -->
-        <a href="malta.html" class="card">
+    <div class="projects-grid">
+        
+        <!-- CARD 1: SOLLENE GROUP -->
+        <a href="./estoque.html" class="card">
+            <div class="card-banner">
+                <img src="imagem.Sollene%20Group.png" alt="Sollene Group Banner">
+            </div>
             <div class="card-content">
-               <span class="card-icon-emoji">🌍</span>
-               <h3>Malta Project</h3>
-               <p>Institutional platform focused on business expansion, premium logistics, and European partnerships.</p>
+                <h3>Sollene Group</h3>
+                <p>International inventory management system with automated financial calculations.</p>
             </div>
         </a>
 
-        <!-- CARD SUMMARY -->
-        <a href="resume.pdf" class="card" target="_blank">
+        <!-- CARD 2: MALTA PROJECT -->
+        <a href="./malta.html" class="card">
+            <div class="card-content">
+               <span class="card-icon-emoji">🌍</span>
+               <h3>Malta Project</h3>
+               <p>Institutional platform focused on business expansion and premium global logistics.</p>
+            </div>
+        </a>
+
+        <!-- CARD 3: RESUME -->
+        <a href="./resume.pdf" class="card" target="_blank">
             <div class="card-content">
                 <span class="card-icon-emoji">📄</span>
-                <h3>Summary</h3>
-                <p>Expert in combining technology and business vision to create efficient solutions with high-end visual standards.</p>
+                <h3>Resume</h3>
+                <p>Expert in combining technology and business vision to create efficient solutions.</p>
             </div>
         </a>
 
