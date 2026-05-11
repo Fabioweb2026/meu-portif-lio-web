@@ -1,34 +1,150 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fábio | Portfolio</title>
+    <title>Fabio Web | Portfolio</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
+        /* RESET & BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #000; color: #fff; text-align: center; }
-        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(to bottom, rgba(0,0,0,0.3), #000), url('foto.fabio1.jpg') center/cover; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 80px; margin-bottom: 10px; }
-        .gold { color: #f1c40f; letter-spacing: 5px; font-size: 12px; font-weight: 800; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: -50px auto 50px; padding: 0 20px; }
-        .card { background: #111; padding: 40px; border-radius: 20px; border: 1px solid #333; transition: 0.3s; }
-        .card:hover { border-color: #f1c40f; transform: translateY(-10px); }
-        .btn { display: inline-block; margin-top: 20px; padding: 10px 30px; border: 2px solid #f1c40f; color: #f1c40f; text-decoration: none; border-radius: 50px; font-weight: 800; font-size: 12px; }
-        .btn:hover { background: #f1c40f; color: #000; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #fdfcf0; 
+            color: #1a1a1a; 
+            padding: 40px 20px; /* Mais espaço no topo e laterais */
+        }
+
+        /* LAYOUT PRINCIPAL */
+        .portfolio-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+
+        /* CARTÃO DE PERFIL (ESQUERDA) */
+        .profile-card {
+            width: 300px;
+            background: #1a1a1a;
+            color: #b39359;
+            padding: 30px;
+            border-radius: 20px;
+            height: fit-content;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+        .profile-card img { width: 120px; border-radius: 50%; border: 3px solid #b39359; margin-bottom: 20px; }
+        .profile-card h1 { font-size: 22px; margin-bottom: 10px; }
+        .profile-card p { font-size: 14px; color: #888; margin-bottom: 20px; }
+        
+        .contact-info { text-align: left; border-top: 1px solid #333; padding-top: 20px; }
+        .contact-item { font-size: 12px; margin-bottom: 10px; text-transform: uppercase; color: #b39359; }
+        .contact-item span { color: #fff; display: block; text-transform: none; font-size: 14px; }
+
+        /* ÁREA DE PROJETOS (DIREITA) */
+        .content-area { flex: 1; }
+        .section-title { font-size: 24px; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
+        .section-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 3px; background: #b39359; }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* CARD DE PROJETO */
+        .project-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border: 1px solid rgba(179, 147, 89, 0.1);
+        }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(179, 147, 89, 0.2); }
+        
+        .project-img { width: 100%; height: 180px; background-color: #1a1a1a; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .project-img img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .project-info { padding: 20px; }
+        .project-category { font-size: 10px; text-transform: uppercase; color: #b39359; font-weight: 700; margin-bottom: 5px; }
+        .project-info h3 { font-size: 18px; margin-bottom: 10px; }
+        .project-info p { font-size: 13px; color: #666; line-height: 1.5; }
+
+        @media (max-width: 900px) {
+            .portfolio-container { flex-direction: column; align-items: center; }
+            .profile-card { width: 100%; }
+        }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <h1>Fábio</h1>
-        <p class="gold">EXPERT SOLUTIONS & MANAGEMENT</p>
+
+    <div class="portfolio-container">
+        <!-- PERFIL -->
+        <aside class="profile-card">
+            <img src="https://github.com" alt="Fabio">
+            <h1>Fabio Web</h1>
+            <p>Web Designer & Inventory Specialist</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">Email <span>contact@fabioweb.com</span></div>
+                <div class="contact-item">Location <span>Malta / Brazil</span></div>
+                <div class="contact-item">LinkedIn <span>://linkedin.com</span></div>
+            </div>
+        </aside>
+
+        <!-- PROJETOS -->
+        <main class="content-area">
+            <h2 class="section-title">My Projects</h2>
+            
+            <div class="projects-grid">
+                
+                <!-- CARD SOLLENE GROUP (ATUALIZADO) -->
+                <a href="https://github.io" class="project-card" target="_blank">
+                    <div class="project-img">
+                        <img src="imagem.Sollene Group.png" alt="Sollene Group">
+                    </div>
+                    <div class="project-info">
+                        <p class="project-category">Inventory System</p>
+                        <h3>Sollene Group Enterprise</h3>
+                        <p>Sistema de controle de estoque internacional com conversão automática de moedas (BRL para EUR/USD).</p>
+                    </div>
+                </a>
+
+                <!-- PROJETO 2 (EXEMPLO) -->
+                <a href="#" class="project-card">
+                    <div class="project-img">
+                        <img src="sollene-group.jpg" alt="Portfolio 2">
+                    </div>
+                    <div class="project-info">
+                        <p class="project-category">Web Design</p>
+                        <h3>Corporate Branding</h3>
+                        <p>Desenvolvimento de identidade visual e layouts premium para empresas de importação e exportação.</p>
+                    </div>
+                </a>
+
+                <!-- PROJETO 3 (EXEMPLO) -->
+                <a href="https://github.com" class="project-card" target="_blank">
+                    <div class="project-img">
+                        <!-- Placeholder enquanto não tem banner -->
+                        <div style="color: #555; font-weight: bold;">MALTA PROJECT</div>
+                    </div>
+                    <div class="project-info">
+                        <p class="project-category">Institutional</p>
+                        <h3>Malta Global Business</h3>
+                        <p>Página institucional focada no mercado europeu e parcerias estratégicas em Malta.</p>
+                    </div>
+                </a>
+
+            </div>
+        </main>
     </div>
-    <div class="grid">
-        <div class="card"><h3>Sollene Group</h3><p>Inventory System</p><a href="estoque.html" class="btn">VIEW PROJECT</a></div>
-        <div class="card"><h3>Malta Experience</h3><p>Premium Travel Guide</p><a href="malta.html" class="btn">VIEW PROJECT</a></div>
-        <div class="card"><h3>Resume</h3><p>Technical Background</p><a href="resume.pdf" target="_blank" class="btn">OPEN PDF</a></div>
-    </div>
-    <footer style="padding: 50px; color: #444; font-size: 10px;">© 2026 FÁBIO — PRESTIGE IN TECHNOLOGY</footer>
+
 </body>
 </html>
 
