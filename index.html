@@ -37,7 +37,7 @@ h1 {
     margin: auto;
 }
 
-/* CARD BASE */
+/* CARD */
 .card {
     width: 350px;
     background: rgba(26,26,26,0.95);
@@ -53,7 +53,7 @@ h1 {
     border-color: #b39359;
 }
 
-/* IMAGEM */
+/* IMAGEM NORMAL */
 .card-img {
     width: 100%;
     height: 200px;
@@ -66,57 +66,30 @@ h1 {
     object-fit: cover;
 }
 
-/* RESUME PREVIEW */
+/* RESUME SIMPLES (SEM FUNDO BRANCO) */
 .resume-preview {
     width: 100%;
     height: 200px;
+    position: relative;
+    overflow: hidden;
     background: #111;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    overflow: hidden;
 }
 
-/* IMAGEM DO TI */
+/* IMAGEM DO RESUME */
 .resume-image {
-    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.35;
+    opacity: 0.85;
+    transition: 0.3s;
 }
 
-/* RESUME PAGE */
-.resume-page {
-    width: 70%;
-    height: 80%;
-    background: #f5f5f5;
-    border-radius: 6px;
-    padding: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    position: relative;
-    z-index: 2;
-}
-
-.resume-header {
-    width: 60%;
-    height: 10px;
-    background: #b39359;
-    margin-bottom: 10px;
-    border-radius: 2px;
-}
-
-.resume-line {
-    width: 100%;
-    height: 6px;
-    background: #ccc;
-    margin: 6px 0;
-    border-radius: 2px;
-}
-
-.resume-line.short {
-    width: 70%;
+.card:hover .resume-image {
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 /* CONTENT */
@@ -133,44 +106,6 @@ h1 {
 .card p {
     font-size: 14px;
     color: #ddd;
-}
-
-/* MODAL */
-#modal {
-    display: none;
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
-.modal-box {
-    width: 95%;
-    height: 90%;
-    background: #fff;
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 30px;
-    cursor: pointer;
-    color: black;
 }
 </style>
 </head>
@@ -209,23 +144,11 @@ iframe {
 
     </div>
 
-    <!-- CARD 3 RESUME -->
+    <!-- CARD 3 RESUME (LIMPO) -->
     <div class="card" onclick="window.open('resume.pdf','_blank')">
 
         <div class="resume-preview">
-
-            <!-- IMAGEM INSERIDA -->
             <img src="homem-trabalhao-TI.png" class="resume-image" alt="TI Professional">
-
-            <div class="resume-page">
-                <div class="resume-header"></div>
-                <div class="resume-line"></div>
-                <div class="resume-line short"></div>
-                <div class="resume-line"></div>
-                <div class="resume-line short"></div>
-                <div class="resume-line"></div>
-            </div>
-
         </div>
 
         <div class="card-content">
@@ -237,23 +160,9 @@ iframe {
 
 </div>
 
-<!-- MODAL -->
-<div id="modal">
-    <div class="modal-box">
-        <span class="close" onclick="closePage()">×</span>
-        <iframe id="frame"></iframe>
-    </div>
-</div>
-
 <script>
 function openPage(url){
-    document.getElementById('frame').src = url;
-    document.getElementById('modal').style.display = 'flex';
-}
-
-function closePage(){
-    document.getElementById('frame').src = '';
-    document.getElementById('modal').style.display = 'none';
+    window.open(url, '_blank');
 }
 </script>
 
