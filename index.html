@@ -6,7 +6,7 @@
     <title>Fabio Web | Portfolio</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* 1. FUNDO GERAL */
+        /* 1. CONFIGURAÇÕES DE FUNDO E BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
@@ -16,6 +16,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            /* Fundo com sua foto e filtro escuro para destacar os cards */
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('foto.fabio1.jpg');
             background-size: cover;
             background-position: center;
@@ -43,16 +44,16 @@
             width: 100%;
         }
 
-        /* 3. ESTILO DO CARD (Ajustado para preenchimento total) */
+        /* 3. ESTILO DO CARD (LAYOUT PREMIUM) */
         .card {
             background: rgba(26, 26, 26, 0.95); 
-            width: 380px; /* Card um pouco mais largo para o banner brilhar */
+            width: 380px; 
             border-radius: 25px;
             text-decoration: none;
             color: #fff;
             border: 1px solid rgba(179, 147, 89, 0.3);
             transition: 0.4s;
-            overflow: hidden; /* Importante para a imagem não sair das bordas arredondadas */
+            overflow: hidden; /* Mantém a imagem dentro das bordas arredondadas */
             display: flex;
             flex-direction: column;
             backdrop-filter: blur(10px);
@@ -64,20 +65,20 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
         }
 
-        /* 4. AJUSTE PARA A IMAGEM PREENCHER TUDO */
-        .card-logo {
+        /* 4. AJUSTE DO BANNER SOLLENE NO CARD */
+        .card-banner {
             width: 100%;
             margin: 0;
             padding: 0;
         }
 
-        .card-logo img {
-            width: 100%; /* Ocupa 100% da largura do card */
+        .card-banner img {
+            width: 100%; 
             height: auto;
-            display: block; /* Remove espaços vazios abaixo da imagem */
+            display: block; 
         }
 
-        /* 5. CONTEÚDO DE TEXTO COM PADDING */
+        /* 5. CONTEÚDO DE TEXTO */
         .card-content {
             padding: 25px;
             text-align: center;
@@ -97,11 +98,12 @@
             line-height: 1.6;
         }
 
-        /* ÍCONES DOS OUTROS CARDS */
+        /* ESTILO PARA OS ÍCONES DOS OUTROS CARDS */
         .card-icon-emoji {
             font-size: 70px;
             margin: 20px 0;
             display: block;
+            color: #b39359;
         }
 
         @media (max-width: 768px) {
@@ -115,9 +117,10 @@
 
     <div class="projects-grid">
         
-        <!-- CARD SOLLENE GROUP: IMAGEM DE PONTA A PONTA -->
+        <!-- CARD 1: SOLLENE GROUP (CONFIGURADO PARA ABRIR estoque.html) -->
         <a href="estoque.html" class="card">
-            <div class="card-logo">
+            <div class="card-banner">
+                <!-- O %20 substitui o espaço no link para evitar erro no navegador -->
                 <img src="imagem.Sollene%20Group.png" alt="Sollene Group Banner">
             </div>
             <div class="card-content">
@@ -126,16 +129,16 @@
             </div>
         </a>
 
-        <!-- CARD MALTA PROJECT -->
+        <!-- CARD 2: MALTA PROJECT -->
         <a href="malta.html" class="card">
             <div class="card-content">
                <span class="card-icon-emoji">🌍</span>
                <h3>Malta Project</h3>
-               <p>Institutional platform focused on business expansion and premium global logistics.</p>
+               <p>Institutional platform focused on business expansion, premium logistics, and European partnerships.</p>
             </div>
         </a>
 
-        <!-- CARD RESUME -->
+        <!-- CARD 3: SUMMARY -->
         <a href="resume.pdf" class="card" target="_blank">
             <div class="card-content">
                 <span class="card-icon-emoji">📄</span>
@@ -148,6 +151,7 @@
 
 </body>
 </html>
+
 
 
 
