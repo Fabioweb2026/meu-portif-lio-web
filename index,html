@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fabio Web | Portfolio</title>
-    <link href="https://googleapis.com" rel="stylesheet">
+
+    <!-- CORREÇÃO: Google Font correta -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
         /* 1. FUNDO E CONFIGURAÇÃO GERAL */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             min-height: 100vh;
@@ -18,116 +22,176 @@
             overflow-x: hidden;
         }
 
-        h1 { font-size: 2.2rem; margin-bottom: 40px; text-align: center; color: #b39359; text-transform: uppercase; letter-spacing: 2px; }
+        h1 { 
+            font-size: 2.2rem; 
+            margin-bottom: 40px; 
+            text-align: center; 
+            color: #b39359; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+        }
 
-        /* 2. GRID PARA OS 3 CARDS */
+        /* 2. GRID DOS CARDS (SEM ALTERAR ESTRUTURA) */
         .projects-grid { 
             display: flex; flex-wrap: wrap; justify-content: center; 
             gap: 20px; max-width: 1200px; width: 100%; 
         }
 
         .card {
-            background: rgba(26, 26, 26, 0.95); width: 350px; border-radius: 25px;
-            cursor: pointer; border: 1px solid rgba(179, 147, 89, 0.3);
-            transition: 0.4s; overflow: hidden; display: flex; flex-direction: column; 
-            backdrop-filter: blur(10px); text-decoration: none; color: inherit;
+            background: rgba(26, 26, 26, 0.95); 
+            width: 350px; 
+            border-radius: 25px;
+            cursor: pointer;
+            border: 1px solid rgba(179, 147, 89, 0.3);
+            transition: 0.4s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+            text-decoration: none;
+            color: inherit;
         }
-        .card:hover { transform: translateY(-10px); border-color: #b39359; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); }
+
+        .card:hover { 
+            transform: translateY(-10px); 
+            border-color: #b39359; 
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); 
+        }
 
         .card-banner img { width: 100%; height: auto; display: block; }
         .card-content { padding: 25px; text-align: center; flex-grow: 1; }
-        .card h3 { font-size: 1.4rem; color: #b39359; margin-bottom: 10px; text-transform: uppercase; }
-        .card p { font-size: 0.9rem; color: #ddd; line-height: 1.5; }
 
-        .icon-box { font-size: 60px; margin: 15px 0; display: block; color: #b39359; }
+        .card h3 { 
+            font-size: 1.4rem; 
+            color: #b39359; 
+            margin-bottom: 10px; 
+            text-transform: uppercase; 
+        }
 
-        /* 3. MODAL (JANELA INTERNA) */
+        .card p { 
+            font-size: 0.9rem; 
+            color: #ddd; 
+            line-height: 1.5; 
+        }
+
+        .icon-box { 
+            font-size: 60px; 
+            margin: 15px 0; 
+            display: block; 
+            color: #b39359; 
+        }
+
+        /* 3. MODAL (CORRIGIDO E ESTÁVEL) */
         #projectModal {
-            display: none; position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.95); z-index: 1000;
-            justify-content: center; align-items: center;
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
         }
-        .modal-content {
-            width: 95%; height: 90%; background: white; border-radius: 20px;
-            overflow: hidden; position: relative;
-        }
-        .close-btn {
-            position: absolute; top: 10px; right: 20px;
-            font-size: 35px; color: #000; cursor: pointer;
-            font-weight: bold; z-index: 1001;
-        }
-        iframe { width: 100%; height: 100%; border: none; background: white; }
 
-        @media (max-width: 768px) { .card { width: 100%; } }
+        .modal-content {
+            width: 95%;
+            height: 90%;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 35px;
+            color: #000;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 1001;
+        }
+
+        @media (max-width: 768px) {
+            .card { width: 100%; }
+        }
     </style>
 </head>
+
 <body>
 
-    <h1>Web Portfolio</h1>
+<h1>Web Portfolio</h1>
 
-    <div class="projects-grid">
-        
-        <!-- CARD 1: SOLLENE GROUP (Abre interno) -->
-        <div class="card" onclick="openProject('estoque.html')">
-            <div class="card-banner">
-                <img src="imagem.Sollene%20Group.png" alt="Sollene">
-            </div>
-            <div class="card-content">
-                <h3>Sollene Group</h3>
-                <p>International inventory system. Click to open inside the portfolio.</p>
-            </div>
+<div class="projects-grid">
+
+    <!-- CARD 1 -->
+    <div class="card" onclick="openProject('estoque.html')">
+        <div class="card-banner">
+            <img src="imagem.Sollene%20Group.png" alt="Sollene Group">
         </div>
-
-        <!-- CARD 2: MALTA PROJECT (Abre interno) -->
-        <div class="card" onclick="openProject('malta.html')">
-            <div class="card-content">
-               <span class="icon-box">🌍</span>
-               <h3>Malta Project</h3>
-               <p>Business gallery and premium logistics from Giorgio's Cafeteria.</p>
-            </div>
-        </div>
-
-        <!-- CARD 3: SUMMARY (Abre em nova aba - PDF é melhor assim) -->
-        <a href="resume.pdf" target="_blank" class="card">
-            <div class="card-content">
-                <span class="icon-box">📄</span>
-                <h3>Summary</h3>
-                <p>Curriculum Vitae and professional experience. Click to open PDF.</p>
-            </div>
-        </a>
-
-    </div>
-
-    <!-- JANELA MODAL -->
-    <div id="projectModal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeProject()">&times;</span>
-            <iframe src="" id="projectFrame"></iframe>
+        <div class="card-content">
+            <h3>Sollene Group</h3>
+            <p>International inventory system with financial automation.</p>
         </div>
     </div>
 
-    <script>
-        function openProject(url) {
-            // Garante que o link está correto
-            document.getElementById('projectFrame').src = url;
-            document.getElementById('projectModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden'; 
-        }
+    <!-- CARD 2 -->
+    <div class="card" onclick="openProject('malta.html')">
+        <div class="card-content">
+            <span class="icon-box">🌍</span>
+            <h3>Malta Project</h3>
+            <p>Business expansion and global logistics platform.</p>
+        </div>
+    </div>
 
-        function closeProject() {
-            document.getElementById('projectModal').style.display = 'none';
-            document.getElementById('projectFrame').src = '';
-            document.body.style.overflow = 'auto'; 
-        }
+    <!-- CARD 3 -->
+    <a href="resume.pdf" target="_blank" class="card">
+        <div class="card-content">
+            <span class="icon-box">📄</span>
+            <h3>Summary</h3>
+            <p>Professional experience and curriculum PDF.</p>
+        </div>
+    </a>
 
-        // Fecha se clicar fora da janela
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('projectModal')) {
-                closeProject();
-            }
-        }
-    </script>
+</div>
+
+<!-- MODAL -->
+<div id="projectModal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeProject()">&times;</span>
+        <iframe id="projectFrame"></iframe>
+    </div>
+</div>
+
+<script>
+function openProject(url) {
+    document.getElementById('projectFrame').src = url;
+    document.getElementById('projectModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeProject() {
+    document.getElementById('projectFrame').src = '';
+    document.getElementById('projectModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// fecha clicando fora
+window.onclick = function(event) {
+    const modal = document.getElementById('projectModal');
+    if (event.target === modal) {
+        closeProject();
+    }
+}
+</script>
 
 </body>
 </html>
