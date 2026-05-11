@@ -53,7 +53,7 @@ h1 {
     border-color: #b39359;
 }
 
-/* IMAGEM */
+/* IMAGEM PADRÃO */
 .card-img {
     width: 100%;
     height: 200px;
@@ -64,6 +64,12 @@ h1 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* 🔧 AJUSTE ESPECÍFICO PARA SOLLENE GROUP (SEM CORTAR TEXTO) */
+.card:nth-child(1) .card-img img {
+    object-fit: contain;
+    background: #111;
 }
 
 /* RESUME */
@@ -104,7 +110,7 @@ h1 {
     color: #ddd;
 }
 
-/* 🔥 BOTÃO HOME FIXO (CORRIGIDO) */
+/* BOTÃO HOME */
 .home-btn {
     position: fixed;
     top: 15px;
@@ -115,8 +121,8 @@ h1 {
     padding: 10px 16px;
     border-radius: 6px;
     text-decoration: none;
-    font-family: Arial, sans-serif;
     font-size: 14px;
+    font-family: Arial, sans-serif;
     transition: 0.3s;
 }
 
@@ -128,7 +134,7 @@ h1 {
 
 <body>
 
-<!-- BOTÃO GLOBAL DE RETORNO -->
+<!-- BOTÃO HOME -->
 <a class="home-btn" href="https://fabioweb2026.github.io/portifolio-web/">
 ← Home
 </a>
@@ -137,7 +143,7 @@ h1 {
 
 <div class="projects-grid">
 
-    <!-- CARD 1 -->
+    <!-- CARD 1 - SOLLENE (AJUSTADO) -->
     <div class="card" onclick="window.open('https://fabioweb2026.github.io/estoque.html/')">
 
         <div class="card-img">
