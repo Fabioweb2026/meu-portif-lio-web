@@ -3,66 +3,182 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Malta Project</title>
+<title>Fabio Web | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #111;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url('foto.fabio1.jpg') center/cover no-repeat;
     color: white;
+    padding: 40px 20px;
 }
 
-/* HEADER BACK BUTTON */
-.top-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.85);
-    padding: 12px 20px;
+h1 {
+    text-align: center;
+    color: #b39359;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* GRID */
+.projects-grid {
     display: flex;
-    align-items: center;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.back-btn {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    background: #b39359;
-    padding: 8px 14px;
-    border-radius: 6px;
+/* CARD */
+.card {
+    width: 350px;
+    background: rgba(26,26,26,0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(179,147,89,0.3);
     transition: 0.3s;
 }
 
-.back-btn:hover {
-    background: #8c6d3c;
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #b39359;
+}
+
+/* IMAGEM */
+.card-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* RESUME */
+.resume-preview {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.resume-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: 0.3s;
+}
+
+.card:hover .resume-image {
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 /* CONTENT */
-.container {
-    padding-top: 80px;
+.card-content {
+    padding: 20px;
     text-align: center;
+}
+
+.card h3 {
+    color: #b39359;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* 🔥 BOTÃO HOME FIXO (CORRIGIDO) */
+.home-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 9999;
+    background: #b39359;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    background: #8c6d3c;
 }
 </style>
 </head>
 
 <body>
 
-<!-- BACK BUTTON FIXO -->
-<div class="top-bar">
-    <a class="back-btn" href="https://fabioweb2026.github.io/portifolio-web/">
-        ← Back to Portfolio
-    </a>
-</div>
+<!-- BOTÃO GLOBAL DE RETORNO -->
+<a class="home-btn" href="https://fabioweb2026.github.io/portifolio-web/">
+← Home
+</a>
 
-<div class="container">
-    <h1>Malta Project</h1>
-    <p>Global business platform</p>
+<h1>Web Portfolio</h1>
 
-    <!-- seu conteúdo continua aqui -->
+<div class="projects-grid">
+
+    <!-- CARD 1 -->
+    <div class="card" onclick="window.open('https://fabioweb2026.github.io/estoque.html/')">
+
+        <div class="card-img">
+            <img src="imagem.Sollene Group.png" alt="Sollene Group">
+        </div>
+
+        <div class="card-content">
+            <h3>Sollene Group</h3>
+            <p>Inventory system</p>
+        </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card" onclick="window.open('https://fabioweb2026.github.io/malta.html/')">
+
+        <div class="card-img">
+            <img src="malta01.jpg.png" alt="Malta Project">
+        </div>
+
+        <div class="card-content">
+            <h3>🌍 Malta Project</h3>
+            <p>Global business platform</p>
+        </div>
+
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card" onclick="window.open('resume.pdf','_blank')">
+
+        <div class="resume-preview">
+            <img src="homem-trabalhao-TI.png" class="resume-image" alt="TI Professional">
+        </div>
+
+        <div class="card-content">
+            <h3>📄 Resume</h3>
+            <p>Professional CV</p>
+        </div>
+
+    </div>
+
 </div>
 
 </body>
