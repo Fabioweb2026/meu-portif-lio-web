@@ -16,7 +16,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            /* Sua foto no fundo com filtro escuro */
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('foto.fabio1.jpg');
             background-size: cover;
             background-position: center;
@@ -68,25 +67,20 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
         }
 
-        /* AJUSTE PARA A IMAGEM DO LOGO DENTRO DO CARD */
+        /* CONTAINER PARA A IMAGEM DO LOGO */
         .card-logo {
-            width: 100px; /* Largura do logo */
-            height: 80px; /* Altura do logo */
+            width: 100%;
+            height: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
 
         .card-logo img {
-            max-width: 100%;
+            max-width: 150px; /* Ajuste o tamanho aqui */
             max-height: 100%;
             object-fit: contain;
-        }
-
-        .card-icon-emoji {
-            font-size: 50px;
-            margin-bottom: 5px;
         }
 
         .card h3 {
@@ -113,25 +107,30 @@
 
     <div class="projects-grid">
         
-        <!-- CARD 1: SOLLENE GROUP COM IMAGEM OFICIAL -->
+        <!-- CARD SOLLENE GROUP COM LOGO PNG -->
         <a href="estoque.html" class="card">
             <div class="card-logo">
-                <img src="imagem.Sollene Group.png" alt="Sollene Group Logo">
+                <!-- O %20 substitui o espaço no link para o navegador não bugar -->
+                <img src="imagem.Sollene%20Group.png" alt="Sollene Group Logo">
             </div>
             <h3>Sollene Group</h3>
             <p>International inventory management system with automated financial calculations between Brazil and Malta.</p>
         </a>
 
-        <!-- CARD 2: MALTA PROJECT -->
+        <!-- CARD MALTA PROJECT -->
         <a href="malta.html" class="card">
-            <div class="card-icon-emoji">🌍</div>
+            <div class="card-logo">
+               <span style="font-size: 60px;">🌍</span>
+            </div>
             <h3>Malta Project</h3>
             <p>Institutional platform focused on business expansion and premium global logistics.</p>
         </a>
 
-        <!-- CARD 3: SUMMARY -->
+        <!-- CARD RESUME -->
         <a href="resume.pdf" class="card" target="_blank">
-            <div class="card-icon-emoji">📄</div>
+            <div class="card-logo">
+                <span style="font-size: 60px;">📄</span>
+            </div>
             <h3>Summary</h3>
             <p>Expert in combining technology and business vision to create efficient solutions with high-end visual standards.</p>
         </a>
@@ -140,4 +139,5 @@
 
 </body>
 </html>
+
 
