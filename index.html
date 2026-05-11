@@ -27,7 +27,6 @@ h1 {
     letter-spacing: 2px;
 }
 
-/* GRID */
 .projects-grid {
     display: flex;
     flex-wrap: wrap;
@@ -37,7 +36,6 @@ h1 {
     margin: auto;
 }
 
-/* CARD */
 .card {
     width: 350px;
     background: rgba(26,26,26,0.95);
@@ -53,14 +51,15 @@ h1 {
     border-color: #b39359;
 }
 
-/* IMAGEM HARMONIZADA */
+/* IMAGENS */
 .card-img {
     width: 100%;
     height: 200px;
     overflow: hidden;
 }
 
-.card-img img {
+.card-img img,
+.card-img svg {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -142,7 +141,7 @@ iframe {
 
     </div>
 
-    <!-- CARD 2 (MALTA COM IMAGEM NOVA) -->
+    <!-- CARD 2 -->
     <div class="card" onclick="openPage('https://Fabioweb2026.github.io/malta.html/')">
 
         <div class="card-img">
@@ -156,8 +155,21 @@ iframe {
 
     </div>
 
-    <!-- CARD 3 -->
+    <!-- CARD 3 (RESUME COM IMAGEM CRIADA) -->
     <div class="card" onclick="window.open('resume.pdf','_blank')">
+
+        <div class="card-img">
+
+            <!-- ÍCONE CRIADO (RESUME VISUAL PROFISSIONAL) -->
+            <svg viewBox="0 0 64 64" fill="none">
+                <rect x="14" y="8" width="36" height="48" rx="4" fill="#1a1a1a" stroke="#b39359" stroke-width="2"/>
+                <line x1="20" y1="20" x2="44" y2="20" stroke="#b39359" stroke-width="2"/>
+                <line x1="20" y1="28" x2="44" y2="28" stroke="#b39359" stroke-width="2"/>
+                <line x1="20" y1="36" x2="38" y2="36" stroke="#b39359" stroke-width="2"/>
+                <circle cx="32" cy="50" r="4" fill="#b39359"/>
+            </svg>
+
+        </div>
 
         <div class="card-content">
             <h3>📄 Resume</h3>
