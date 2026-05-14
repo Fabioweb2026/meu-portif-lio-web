@@ -5,26 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Portfolio | Fábio Frontend</title>
     <style>
-        /* ESTILO INTERNACIONAL DARK LUXO EXATO DO SEU PADRÃO */
+        /* DIRETRIZES EXATAS DO SEU LAYOUT DARK LUXO */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: sans-serif; background: #121214; color: #f5f5f7; padding-bottom: 60px; overflow-x: hidden; }
 
-        /* TÍTULO PRINCIPAL DO PORTFÓLIO */
+        /* TÍTULO PRINCIPAL DO SEU PORTFÓLIO */
         .portfolio-title {
             text-align: center; font-size: 32px; font-weight: 800; color: #b5a48b; 
             letter-spacing: 4px; text-transform: uppercase; margin: 40px 0 30px 0;
         }
 
-        /* CONTAINER EM GRADE SIMÉTRICA */
+        /* CONTAINER CENTRALIZADO PARA OS CARDS */
         .dashboard-container { 
-            max-width: 1650px; margin: 0 auto; padding: 0 4%; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 0 4%; 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 25px; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 35px; 
             align-items: start;
         }
         
-        /* CARDS BLACK FOSCOS COM CANTOS ARREDONDADOS */
+        /* CAIXAS ELEGANTES PRETAS FOSCAS IDÊNTICAS AO SEU PADRÃO */
         .panel-card { 
             background: #1c1c1f; 
             border: 1px solid #2a2a32; 
@@ -45,7 +47,7 @@
         /* RECIPIENTE DA IMAGEM SUPERIOR DO CARD */
         .card-img-wrapper {
             width: 100%;
-            height: 180px;
+            height: 200px;
             overflow: hidden;
             background: #121214;
             display: flex;
@@ -55,59 +57,39 @@
         }
         .card-img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* TEXTOS CENTRALIZADOS */
-        .card-text-area { padding: 20px 15px; }
-        .card-text-area h3 { font-size: 16px; font-weight: bold; color: #fff; margin-bottom: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
-        .card-text-area p { font-size: 12px; color: #a0a0ab; font-weight: 500; line-height: 1.4; }
+        /* BLOCO DE TEXTOS CENTRALIZADOS EM BAIXO DA IMAGEM */
+        .card-text-area { padding: 25px 20px; }
+        .card-text-area h3 { font-size: 18px; font-weight: bold; color: #fff; margin-bottom: 8px; letter-spacing: 0.5px; }
+        .card-text-area p { font-size: 13px; color: #a0a0ab; font-weight: 500; }
     </style>
 </head>
 <body>
 
+    <!-- WEB PORTFOLIO MAIN HEADER -->
     <h1 class="portfolio-title">WEB PORTFOLIO</h1>
 
+    <!-- VITRINE DE PROJETOS UNIFICADA -->
     <main class="dashboard-container">
         
-        <!-- CARD 1: SOLLENE LUXURY STORE (Link externo para a sua loja de roupas) -->
+        <!-- CARD 1: Link direto e funcional para o repositório web-store-html -->
         <a href="https://github.io" target="_blank" class="panel-card">
             <div class="card-img-wrapper">
                 <img src="imagem.Sollene Group.png" class="card-img" onerror="this.src='giorgios.png'">
             </div>
             <div class="card-text-area">
-                <h3>Sollene Luxury Store</h3>
-                <p>Premium E-commerce platform for luxury garments, shirts, bags and high-end watches with persistent cart logic.</p>
+                <h3>Sollene Group</h3>
+                <p>Inventory system</p>
             </div>
         </a>
 
-        <!-- CARD 2: SOLLENE CARGO LEDGER (Link local para o estoque.html que está na sua pasta) -->
-        <a href="estoque.html" target="_blank" class="panel-card">
+        <!-- CARD 2: Link direto e funcional para o repositório estoque.html -->
+        <a href="https://github.io" target="_blank" class="panel-card">
             <div class="card-img-wrapper">
                 <img src="imagem.Sollene Group.png" class="card-img" style="object-position: center bottom;">
             </div>
             <div class="card-text-area">
-                <h3>Sollene Cargo Ledger</h3>
-                <p>Global multi-currency ledger system built to coordinate cargo manifest inputs, currency exchanges and stock tracking.</p>
-            </div>
-        </a>
-
-        <!-- CARD 3: MALTA PROJECT (Link local para o malta.html que está na sua pasta) -->
-        <a href="malta.html" target="_blank" class="panel-card">
-            <div class="card-img-wrapper">
-                <img src="giorgios.png" class="card-img">
-            </div>
-            <div class="card-text-area">
-                <h3>Malta Project</h3>
-                <p>Global business platform designed for luxury café boutique branding and corporate trade communications.</p>
-            </div>
-        </a>
-
-        <!-- CARD 4: DASHBOARD ESTUDOS (Link externo para a sua pasta de exercícios de TI) -->
-        <a href="https://github.io" target="_blank" class="panel-card">
-            <div class="card-img-wrapper">
-                <img src="homem-trabalhao-TI.png" class="card-img">
-            </div>
-            <div class="card-text-area">
-                <h3>Dashboard Estudos</h3>
-                <p>Core sandbox system engineered to analyze and structure the fundamental mechanics of HTML5, CSS3, and JavaScript.</p>
+                <h3>Sollene Trade Ledger</h3>
+                <p>Global business platform</p>
             </div>
         </a>
 
@@ -115,4 +97,3 @@
 
 </body>
 </html>
-
