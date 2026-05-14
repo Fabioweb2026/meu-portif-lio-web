@@ -5,17 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Portfolio | Fábio Frontend</title>
     <style>
-        /* DIRETRIZES EXATAS DO SEU LAYOUT DARK LUXO */
+        /* DIRETRIZES EXATAS DO SEU LAYOUT PREMIUM ESCURO */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: sans-serif; background: #121214; color: #f5f5f7; padding-bottom: 60px; overflow-x: hidden; }
+        body { 
+            font-family: sans-serif; 
+            background: #121214 url('image.png') no-repeat center center fixed; 
+            background-size: cover;
+            color: #f5f5f7; 
+            padding-bottom: 60px; 
+            overflow-x: hidden; 
+        }
+
+        /* BOTÃO HOME NO CANTO SUPERIOR ESQUERDO */
+        .btn-home-top {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #b5a48b;
+            color: #121214;
+            text-decoration: none;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-home-top:hover { background: #fff; }
 
         /* TÍTULO PRINCIPAL DO SEU PORTFÓLIO */
         .portfolio-title {
             text-align: center; font-size: 32px; font-weight: 800; color: #b5a48b; 
-            letter-spacing: 4px; text-transform: uppercase; margin: 40px 0 30px 0;
+            letter-spacing: 4px; text-transform: uppercase; margin: 80px 0 40px 0;
         }
 
-        /* CONTAINER CENTRALIZADO PARA OS CARDS */
+        /* CONTAINER CENTRALIZADO HARMÔNICO PARA OS 2 CARDS ANTERIORES */
         .dashboard-container { 
             max-width: 1000px; 
             margin: 0 auto; 
@@ -26,13 +52,13 @@
             align-items: start;
         }
         
-        /* CAIXAS ELEGANTES PRETAS FOSCAS IDÊNTICAS AO SEU PADRÃO */
+        /* CARDS BLACK FOSCOS TRANSLÚCIDOS DO SEU LAYOUT ORIGINAL */
         .panel-card { 
-            background: #1c1c1f; 
+            background: rgba(28, 28, 31, 0.85); 
             border: 1px solid #2a2a32; 
             border-radius: 20px; 
             padding: 0; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4); 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -42,7 +68,7 @@
             color: inherit;
             height: 100%;
         }
-        .panel-card:hover { transform: translateY(-8px); border-color: #7a5c33; box-shadow: 0 20px 40px rgba(122,92,51,0.15); }
+        .panel-card:hover { transform: translateY(-8px); border-color: #b5a48b; box-shadow: 0 20px 40px rgba(181,164,139,0.15); }
 
         /* RECIPIENTE DA IMAGEM SUPERIOR DO CARD */
         .card-img-wrapper {
@@ -57,7 +83,7 @@
         }
         .card-img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* BLOCO DE TEXTOS CENTRALIZADOS EM BAIXO DA IMAGEM */
+        /* TEXTOS CENTRALIZADOS */
         .card-text-area { padding: 25px 20px; }
         .card-text-area h3 { font-size: 18px; font-weight: bold; color: #fff; margin-bottom: 8px; letter-spacing: 0.5px; }
         .card-text-area p { font-size: 13px; color: #a0a0ab; font-weight: 500; }
@@ -65,16 +91,19 @@
 </head>
 <body>
 
+    <!-- BOTÃO HOME DE RETORNO DO SEU LAYOUT -->
+    <a href="#" class="btn-home-top">← Home</a>
+
     <!-- WEB PORTFOLIO MAIN HEADER -->
     <h1 class="portfolio-title">WEB PORTFOLIO</h1>
 
-    <!-- VITRINE DE PROJETOS UNIFICADA -->
+    <!-- VITRINE DE PROJETOS UNIFICADA ANTERIOR RECONFIGURADA -->
     <main class="dashboard-container">
         
-        <!-- CARD 1: Link direto e funcional para o repositório web-store-html -->
+        <!-- CARD 1: web-store-html (A loja externa de roupas conectada) -->
         <a href="https://github.io" target="_blank" class="panel-card">
             <div class="card-img-wrapper">
-                <img src="imagem.Sollene Group.png" class="card-img" onerror="this.src='giorgios.png'">
+                <img src="imagem.Sollene%20Group.png" class="card-img" onerror="this.src='giorgios.png'">
             </div>
             <div class="card-text-area">
                 <h3>Sollene Group</h3>
@@ -82,10 +111,10 @@
             </div>
         </a>
 
-        <!-- CARD 2: Link direto e funcional para o repositório estoque.html -->
-        <a href="https://github.io" target="_blank" class="panel-card">
+        <!-- CARD 2: estoque.html (O seu manifesto aduaneiro interno da mesma pasta) -->
+        <a href="estoque.html" target="_blank" class="panel-card">
             <div class="card-img-wrapper">
-                <img src="imagem.Sollene Group.png" class="card-img" style="object-position: center bottom;">
+                <img src="imagem.Sollene%20Group.png" class="card-img" style="object-position: center bottom;" onerror="this.src='giorgios.png'">
             </div>
             <div class="card-text-area">
                 <h3>Sollene Trade Ledger</h3>
