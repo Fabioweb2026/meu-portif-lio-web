@@ -3,194 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fabio Web | Portfolio</title>
+
+<title>Malta Experience</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    min-height: 100vh;
+body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+
+    min-height:100vh;
 
     background:
-    linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)),
-    url('foto.fabio1.jpg') center/cover no-repeat;
+    linear-gradient(rgba(0,0,0,0.82),rgba(0,0,0,0.82)),
+    url('malta01.jpg.png') center/cover no-repeat;
 
-    color: white;
-    padding: 40px 20px;
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
 }
 
-h1 {
-    text-align: center;
-    color: #b39359;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.container{
+    max-width:850px;
+
+    background:rgba(20,20,20,0.85);
+
+    border:1px solid rgba(179,147,89,0.3);
+
+    padding:60px 40px;
+
+    border-radius:24px;
+
+    backdrop-filter:blur(8px);
 }
 
-/* GRID */
+h1{
+    font-size:58px;
+    color:#b39359;
 
-.projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 22px;
-    max-width: 1200px;
-    margin: auto;
+    margin-bottom:20px;
+
+    letter-spacing:4px;
 }
 
-/* CARD */
+p{
+    font-size:18px;
+    line-height:1.8;
 
-.card {
-    width: 350px;
-    background: rgba(26,26,26,0.95);
-    border-radius: 18px;
-    overflow: hidden;
-    cursor: pointer;
+    color:#dcdcdc;
 
-    border: 1px solid rgba(179,147,89,0.3);
-
-    transition: 0.35s ease;
+    margin-bottom:40px;
 }
 
-.card:hover {
-    transform: translateY(-10px);
+.btn{
+    display:inline-block;
 
-    border-color: rgba(179,147,89,0.8);
+    padding:14px 28px;
 
-    box-shadow:
-    0 20px 40px rgba(0,0,0,0.6);
+    border:1px solid #b39359;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    transition:0.3s ease;
 }
 
-/* IMAGE */
-
-.card-img {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    background: #111;
-}
-
-.card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    transition: transform 0.5s ease;
-}
-
-.card:hover .card-img img {
-    transform: scale(1.05);
-}
-
-/* SOLLENE */
-
-.card:nth-child(1) .card-img {
-    background: radial-gradient(circle at center, #1a1a1a, #0d0d0d);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 14px;
-}
-
-.card:nth-child(1) .card-img img {
-    width: 92%;
-    height: 92%;
-    object-fit: contain;
-
-    filter: drop-shadow(0px 6px 10px rgba(0,0,0,0.6));
-}
-
-/* RESUME */
-
-.resume-preview {
-    width: 100%;
-    height: 200px;
-    position: relative;
-    overflow: hidden;
-    background: #111;
-}
-
-.resume-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    opacity: 0.88;
-
-    transition: 0.4s ease;
-}
-
-.card:hover .resume-image {
-    transform: scale(1.05);
-    opacity: 1;
-}
-
-/* CONTENT */
-
-.card-content {
-    padding: 20px;
-    text-align: center;
-}
-
-.card h3 {
-    color: #b39359;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    color: #dcdcdc;
-}
-
-/* HOME BUTTON */
-
-.home-btn {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-
-    z-index: 9999;
-
-    background: #b39359;
-    color: white;
-
-    padding: 10px 16px;
-
-    border-radius: 6px;
-
-    text-decoration: none;
-    font-size: 14px;
-
-    transition: 0.3s;
-}
-
-.home-btn:hover {
-    background: #8c6d3c;
-}
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-
-    .projects-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 92%;
-    }
-
+.btn:hover{
+    background:#b39359;
+    color:black;
 }
 
 </style>
@@ -198,84 +94,18 @@ h1 {
 
 <body>
 
-<!-- HOME BUTTON -->
+<div class="container">
 
-<a class="home-btn"
-href="https://fabioweb2026.github.io/meu-portifolio-web/index.html">
+    <h1>MALTA</h1>
 
-← Home
+    <p>
+        International modern project integrated into Fabio Web Portfolio.
+        Elegant design, premium visual identity and responsive experience.
+    </p>
 
-</a>
-
-<h1>Web Portfolio</h1>
-
-<div class="projects-grid">
-
-    <!-- CARD 1 -->
-
-    <div class="card"
-    onclick="window.open('https://fabioweb2026.github.io/estoque.html/')">
-
-        <div class="card-img">
-            <img src="sollene-group.jpg" alt="Sollene Group">
-        </div>
-
-        <div class="card-content">
-            <h3>Sollene Group</h3>
-            <p>Inventory system</p>
-        </div>
-
-    </div>
-
-    <!-- CARD 2 -->
-
-    <div class="card"
-    onclick="window.open('https://fabioweb2026.github.io/malta.html/')">
-
-        <div class="card-img">
-            <img src="malta01.jpg.png" alt="Malta Project">
-        </div>
-
-        <div class="card-content">
-            <h3>🌍 Malta Project</h3>
-            <p>Global business platform</p>
-        </div>
-
-    </div>
-
-    <!-- CARD 3 -->
-
-    <div class="card"
-    onclick="window.open('resume.pdf','_blank')">
-
-        <div class="resume-preview">
-            <img src="homem-trabalhao-TI.png"
-            class="resume-image"
-            alt="TI Professional">
-        </div>
-
-        <div class="card-content">
-            <h3>📄 Resume</h3>
-            <p>Professional CV</p>
-        </div>
-
-    </div>
-
-    <!-- CARD 4 -->
-
-    <div class="card"
-    onclick="window.open('https://fabioweb2026.github.io/web-store-html/')">
-
-        <div class="card-img">
-            <img src="sollenegroup.png.png" alt="Web Store HTML">
-        </div>
-
-        <div class="card-content">
-            <h3>🛍️ Web Store HTML</h3>
-            <p>Luxury fashion store experience</p>
-        </div>
-
-    </div>
+    <a href="index.html" class="btn">
+        ← Back to Portfolio
+    </a>
 
 </div>
 
